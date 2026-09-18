@@ -197,8 +197,34 @@ h2 {
 .chart .bar-label {
   fill: #777;
 }
-.chart .bar-div1 {
+.chart .bar-club-0 {
+  fill: #2c3e50;
+}
+.chart .bar-club-1 {
   fill: #7f9bb3;
+}
+.chart .bar-club-2 {
+  fill: #3f8f5f;
+}
+.chart-stacked .bar-group:hover .bar,
+.chart-stacked .bar-group:focus .bar,
+.chart-stacked .bar-group.active .bar {
+  fill-opacity: 0.75;
+}
+.chart-stacked .bar-group:hover .bar-club-0,
+.chart-stacked .bar-group:focus .bar-club-0,
+.chart-stacked .bar-group.active .bar-club-0 {
+  fill: #2c3e50;
+}
+.chart-stacked .bar-group:hover .bar-club-1,
+.chart-stacked .bar-group:focus .bar-club-1,
+.chart-stacked .bar-group.active .bar-club-1 {
+  fill: #7f9bb3;
+}
+.chart-stacked .bar-group:hover .bar-club-2,
+.chart-stacked .bar-group:focus .bar-club-2,
+.chart-stacked .bar-group.active .bar-club-2 {
+  fill: #3f8f5f;
 }
 .chart-legend {
   display: flex;
@@ -215,11 +241,14 @@ h2 {
   margin-right: 6px;
   vertical-align: -1px;
 }
-.swatch-elite {
+.swatch-club-0 {
   background: #2c3e50;
 }
-.swatch-div1 {
+.swatch-club-1 {
   background: #7f9bb3;
+}
+.swatch-club-2 {
+  background: #3f8f5f;
 }
 .stats-table td.details {
   white-space: normal;

@@ -1,5 +1,6 @@
 // Kampoversikt: leser /data/kamper.json og tegner nøkkeltall, graf over
-// kamper per sesong (Eliteserien og 1. divisjon) og en tabell med nivåfilter.
+// kamper per sesong og en tabell. Lagene slås sammen per klubb
+// (f.eks. Førde VBK + Førde VBK 2 = Førde).
 (function () {
   'use strict';
 
@@ -12,13 +13,14 @@
     no: {
       loading: 'Laster kamper …',
       error: 'Klarte ikke å laste kampoversikten.',
-      filter: 'Vis nivå',
-      all: 'Alle nivåer',
+      filter: 'Vis klubb',
+      all: 'Alle klubber',
       levels: { elite: 'Eliteserien', div1: '1. divisjon' },
       cats: { league: 'serie', playoff: 'sluttspill', cup: 'cup', europe: 'Europacup', nordic: 'nordisk klubbmesterskap', ranking: 'ranking', other: 'andre' },
-      tiles: { total: 'Kamper totalt', elite: 'Eliteserien', div1: '1. divisjon', europe: 'Europacup', seasons: 'Sesonger' },
+      totalTile: 'Kamper totalt',
+      europeTile: 'Europacup',
       chartTitle: 'Kamper per sesong',
-      cols: { season: 'Sesong', level: 'Nivå', team: 'Lag', matches: 'Kamper', details: 'Fordeling' },
+      cols: { season: 'Sesong', club: 'Klubb', matches: 'Kamper', details: 'Fordeling' },
       total: 'Totalt',
       matchesWord: 'kamper',
       hint: 'Hold over eller trykk på en søyle for detaljer.',
@@ -26,13 +28,14 @@
     en: {
       loading: 'Loading matches …',
       error: 'Could not load the match overview.',
-      filter: 'Show level',
-      all: 'All levels',
+      filter: 'Show club',
+      all: 'All clubs',
       levels: { elite: 'Top division', div1: '1st division' },
       cats: { league: 'league', playoff: 'playoffs', cup: 'cup', europe: 'European cup', nordic: 'Nordic club championship', ranking: 'ranking', other: 'other' },
-      tiles: { total: 'Total matches', elite: 'Top division', div1: '1st division', europe: 'European cup', seasons: 'Seasons' },
+      totalTile: 'Total matches',
+      europeTile: 'European cup',
       chartTitle: 'Matches per season',
-      cols: { season: 'Season', level: 'Level', team: 'Team', matches: 'Matches', details: 'Breakdown' },
+      cols: { season: 'Season', club: 'Club', matches: 'Matches', details: 'Breakdown' },
       total: 'Total',
       matchesWord: 'matches',
       hint: 'Hover or tap a bar for details.',
@@ -41,7 +44,9 @@
 
   const num = (n) => n.toLocaleString(locale);
   const SVG_NS = 'http://www.w3.org/2000/svg';
-  const LEVELS = ['elite', 'div1'];
+
+  // "Førde VBK 2" -> "Førde", "OSI 2" -> "OSI", "NTNUI 2" -> "NTNUI"
+  const clubOf = (team) => team.replace(/\s+2$/, '').replace(/\s+(VBK|Volleyballklubb)$/i, '');
 
   function el(tag, attrs, ...children) {
     const node = document.createElement(tag);
@@ -59,8 +64,7 @@
     return node;
   }
 
-  const total = (r) => Object.values(r.counts).reduce((s, n) => s + n, 0);
-  const details = (r) => Object.entries(r.counts).map(([k, n]) => `${n} ${T.cats[k]}`).join(', ');
+  const countsText = (counts) => Object.entries(counts).map(([k, n]) => `${n} ${T.cats[k]}`).join(', ');
 
   const status = el('p', { class: 'stats-status' }, T.loading);
   root.replaceChildren(status);
@@ -76,28 +80,41 @@
     });
 
   function render(data) {
-    const rows = data.rows.map((r) => ({ ...r, matches: total(r) }));
-    let level = '';
+    // Én rad per sesong og klubb, med nivåene (Eliteserien / 1. divisjon) som fordeling.
+    const grouped = new Map();
+    for (const r of data.rows) {
+      const club = clubOf(r.team);
+      const key = `${r.season}|${club}`;
+      const g = grouped.get(key) || { season: r.season, club, matches: 0, europe: 0, parts: [] };
+      const n = Object.values(r.counts).reduce((s, x) => s + x, 0);
+      g.matches += n;
+      g.europe += r.counts.europe || 0;
+      g.parts.push(`${T.levels[r.level]}: ${countsText(r.counts)}`);
+      grouped.set(key, g);
+    }
+    const rows = [...grouped.values()];
+    const clubs = [...new Set(rows.sort((a, b) => a.season.localeCompare(b.season)).map((r) => r.club))];
+    let club = '';
 
-    const select = el('select', { id: 'matches-level' }, el('option', { value: '' }, T.all));
-    for (const l of LEVELS) select.append(el('option', { value: l }, T.levels[l]));
+    const select = el('select', { id: 'matches-club' }, el('option', { value: '' }, T.all));
+    for (const c of clubs) select.append(el('option', { value: c }, c));
     select.addEventListener('change', () => {
-      level = select.value;
+      club = select.value;
       update();
     });
-    const controls = el('div', { class: 'stats-controls' }, el('label', { for: 'matches-level' }, T.filter), select);
+    const controls = el('div', { class: 'stats-controls' }, el('label', { for: 'matches-club' }, T.filter), select);
 
     const tiles = el('div', { class: 'stat-tiles' });
     const legend = el(
       'div',
       { class: 'chart-legend' },
-      ...LEVELS.map((l) => el('span', {}, el('span', { class: `swatch swatch-${l}` }), T.levels[l]))
+      ...clubs.map((c, i) => el('span', {}, el('span', { class: `swatch swatch-club-${i}` }), c))
     );
-    const chartWrap = el('div', { class: 'chart' });
+    const chartWrap = el('div', { class: 'chart chart-stacked' });
     const chartInfo = el('p', { class: 'chart-info', 'aria-live': 'polite' }, T.hint);
     const chart = el('figure', { class: 'chart-figure' }, el('figcaption', {}, T.chartTitle), legend, chartWrap, chartInfo);
 
-    const headRow = el('tr', {}, ...['season', 'level', 'team', 'matches', 'details'].map((k) => el('th', { scope: 'col', class: k === 'matches' ? 'num' : '' }, T.cols[k])));
+    const headRow = el('tr', {}, ...['season', 'club', 'matches', 'details'].map((k) => el('th', { scope: 'col', class: k === 'matches' ? 'num' : '' }, T.cols[k])));
     const tbody = el('tbody');
     const tfoot = el('tfoot');
     const table = el('table', { class: 'stats-table' }, el('thead', {}, headRow), tbody, tfoot);
@@ -105,25 +122,19 @@
     root.replaceChildren(controls, tiles, chart, el('div', { class: 'table-wrap' }, table));
 
     function update() {
-      const visible = rows.filter((r) => !level || r.level === level);
+      const visible = rows.filter((r) => !club || r.club === club);
       renderTiles(visible);
       renderChart(visible);
       renderTable(visible);
     }
 
     function renderTiles(visible) {
-      const sum = (f) => visible.filter(f).reduce((s, r) => s + r.matches, 0);
-      const values = {
-        total: sum(() => true),
-        elite: sum((r) => r.level === 'elite'),
-        div1: sum((r) => r.level === 'div1'),
-        europe: visible.reduce((s, r) => s + (r.counts.europe || 0), 0),
-        seasons: new Set(visible.map((r) => r.season)).size,
-      };
+      const sum = (list) => list.reduce((s, r) => s + r.matches, 0);
+      const tile = (value, label) => el('div', { class: 'tile' }, el('span', { class: 'tile-num' }, num(value)), el('span', { class: 'tile-label' }, label));
       tiles.replaceChildren(
-        ...Object.keys(values).map((k) =>
-          el('div', { class: 'tile' }, el('span', { class: 'tile-num' }, num(values[k])), el('span', { class: 'tile-label' }, T.tiles[k]))
-        )
+        tile(sum(visible), T.totalTile),
+        ...clubs.filter((c) => !club || c === club).map((c) => tile(sum(visible.filter((r) => r.club === c)), c)),
+        tile(visible.reduce((s, r) => s + r.europe, 0), T.europeTile)
       );
     }
 
@@ -146,15 +157,15 @@
         title.textContent = `${season.season}: ${num(season.matches)} ${T.matchesWord}`;
         g.append(title);
 
-        // Stablede søyler: Eliteserien nederst, 1. divisjon over.
+        // Stablede søyler, én farge per klubb.
         let y = top + h;
-        for (const l of LEVELS) {
-          const n = season.parts.filter((r) => r.level === l).reduce((sum, r) => sum + r.matches, 0);
-          if (!n) continue;
+        clubs.forEach((c, ci) => {
+          const n = season.parts.filter((r) => r.club === c).reduce((sum, r) => sum + r.matches, 0);
+          if (!n) return;
           const bh = (n / max) * h;
           y -= bh;
-          g.append(svg('rect', { x, y, width: barW, height: bh, class: `bar bar-${l}` }));
-        }
+          g.append(svg('rect', { x, y, width: barW, height: bh, class: `bar bar-club-${ci}` }));
+        });
         const value = svg('text', { x: x + barW / 2, y: y - 6, class: 'bar-value' });
         value.textContent = num(season.matches);
         const label = svg('text', { x: x + barW / 2, y: top + h + 18, class: 'bar-label' });
@@ -164,7 +175,7 @@
         const show = () => {
           s.querySelectorAll('.bar-group.active').forEach((n) => n.classList.remove('active'));
           g.classList.add('active');
-          const lines = season.parts.map((r) => `${r.team} (${T.levels[r.level]}): ${details(r)}`);
+          const lines = season.parts.map((r) => `${r.club} – ${r.parts.join('; ')}`);
           chartInfo.textContent = `${season.season} – ${num(season.matches)} ${T.matchesWord}. ${lines.join(' · ')}`;
         };
         g.addEventListener('mouseenter', show);
@@ -177,17 +188,16 @@
     }
 
     function renderTable(visible) {
-      const sorted = [...visible].sort((a, b) => b.season.localeCompare(a.season) || LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level));
+      const sorted = [...visible].sort((a, b) => b.season.localeCompare(a.season) || clubs.indexOf(a.club) - clubs.indexOf(b.club));
       tbody.replaceChildren(
         ...sorted.map((r) =>
           el(
             'tr',
             {},
             el('td', {}, r.season),
-            el('td', {}, T.levels[r.level]),
-            el('td', {}, r.team),
+            el('td', {}, r.club),
             el('td', { class: 'num' }, num(r.matches)),
-            el('td', { class: 'details' }, details(r))
+            el('td', { class: 'details' }, r.parts.join('; '))
           )
         )
       );
@@ -195,7 +205,7 @@
         el(
           'tr',
           {},
-          el('th', { scope: 'row', colspan: '3' }, T.total),
+          el('th', { scope: 'row', colspan: '2' }, T.total),
           el('td', { class: 'num' }, num(visible.reduce((s, r) => s + r.matches, 0))),
           el('td', {}, '')
         )

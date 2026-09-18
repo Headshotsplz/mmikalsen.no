@@ -12,11 +12,11 @@
     no: {
       loading: 'Laster statistikk …',
       error: 'Klarte ikke å hente statistikken akkurat nå. Prøv igjen senere.',
-      allTeams: 'Alle lag',
-      filter: 'Vis lag',
+      allTeams: 'Alle klubber',
+      filter: 'Vis klubb',
       chartTitle: 'Poeng per sesong',
       tiles: { matches: 'Kamper med statistikk', sets: 'Sett', points: 'Poeng', attack: 'Angrepspoeng', block: 'Blokkpoeng', ace: 'Serveess' },
-      cols: { season: 'Sesong', competition: 'Turnering', team: 'Lag', matches: 'Kamper', sets: 'Sett', points: 'Poeng', attack: 'Angrep', block: 'Blokk', ace: 'Ess', attackPct: 'Angrep %' },
+      cols: { season: 'Sesong', competition: 'Turnering', team: 'Klubb', matches: 'Kamper', sets: 'Sett', points: 'Poeng', attack: 'Angrep', block: 'Blokk', ace: 'Ess', attackPct: 'Angrep %' },
       matchesWord: 'kamper',
       pointsWord: 'poeng',
       hint: 'Hold over eller trykk på en søyle for detaljer. Klikk på en kolonne for å sortere.',
@@ -25,11 +25,11 @@
     en: {
       loading: 'Loading statistics …',
       error: 'Could not load the statistics right now. Please try again later.',
-      allTeams: 'All teams',
-      filter: 'Show team',
+      allTeams: 'All clubs',
+      filter: 'Show club',
       chartTitle: 'Points per season',
       tiles: { matches: 'Matches with stats', sets: 'Sets', points: 'Points', attack: 'Attack points', block: 'Block points', ace: 'Aces' },
-      cols: { season: 'Season', competition: 'Competition', team: 'Team', matches: 'Matches', sets: 'Sets', points: 'Points', attack: 'Attack', block: 'Block', ace: 'Aces', attackPct: 'Attack %' },
+      cols: { season: 'Season', competition: 'Competition', team: 'Club', matches: 'Matches', sets: 'Sets', points: 'Points', attack: 'Attack', block: 'Block', ace: 'Aces', attackPct: 'Attack %' },
       matchesWord: 'matches',
       pointsWord: 'points',
       hint: 'Hover or tap a bar for details. Click a column to sort.',
@@ -75,7 +75,9 @@
     });
 
   function render(data) {
-    const rows = data.rows.map((r) => ({ ...r, competition: shortCompetition(r.competition) }));
+    // Lag vises per klubb: "OSI 2" -> "OSI", "NTNUI 2" -> "NTNUI".
+    const clubOf = (team) => team.replace(/\s+2$/, '').replace(/\s+(VBK|Volleyballklubb)$/i, '');
+    const rows = data.rows.map((r) => ({ ...r, team: clubOf(r.team), competition: shortCompetition(r.competition) }));
     const teams = [...new Set(rows.map((r) => r.team))];
     const state = { team: '', sortKey: 'compId', sortDir: -1 };
 
