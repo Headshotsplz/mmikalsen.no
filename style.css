@@ -122,6 +122,131 @@ h2 {
   color: #777;
   margin-top: 4px;
 }
+.stats-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stats-controls select {
+  font: inherit;
+  padding: 4px 8px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: white;
+}
+.stat-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tile {
+  background: #f4f6f8;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.tile-num {
+  display: block;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #2c3e50;
+  line-height: 1.2;
+}
+.tile-label {
+  font-size: 0.85em;
+  color: #555;
+}
+.chart-figure {
+  margin: 0 0 20px;
+}
+.chart-figure figcaption {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+.chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+}
+.chart .axis {
+  stroke: #ccc;
+}
+.chart .bar {
+  fill: #2c3e50;
+  transition: fill 0.15s;
+}
+.chart .bar-group {
+  cursor: pointer;
+  outline: none;
+}
+.chart .bar-group:hover .bar,
+.chart .bar-group:focus .bar,
+.chart .bar-group.active .bar {
+  fill: #d4a017;
+}
+.chart .bar-value,
+.chart .bar-label {
+  text-anchor: middle;
+  font-size: 12px;
+  fill: #333;
+}
+.chart .bar-label {
+  fill: #777;
+}
+.chart-info {
+  margin: 8px 0 0;
+  font-size: 0.9em;
+  color: #555;
+  min-height: 1.6em;
+}
+.table-wrap {
+  overflow-x: auto;
+}
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+.stats-table th,
+.stats-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #e3e3e3;
+  text-align: left;
+}
+.stats-table .num {
+  text-align: right;
+}
+.stats-table thead button {
+  font: inherit;
+  font-weight: bold;
+  color: #2c3e50;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.stats-table th[aria-sort="ascending"] button::after {
+  content: " ▲";
+}
+.stats-table th[aria-sort="descending"] button::after {
+  content: " ▼";
+}
+.stats-table tfoot th,
+.stats-table tfoot td {
+  font-weight: bold;
+  border-bottom: none;
+}
+.stats-updated,
+.stats-source,
+.stats-status {
+  font-size: 0.85em;
+  color: #777;
+}
 footer {
   text-align: center;
   padding: 20px;
