@@ -5,7 +5,7 @@
 const BASE = 'https://nvbf-web.dataproject.com';
 const PLAYER_ID = '803';
 // Bare statistikk fra disse lagene vises på siden.
-const TEAMS = ['NTNUI 2'];
+const TEAMS = ['OSI 2', 'NTNUI 2'];
 
 async function fetchWithTimeout(url, options = {}) {
   return fetch(url, { ...options, signal: AbortSignal.timeout(8000) });
