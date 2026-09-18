@@ -48,6 +48,62 @@ h2 {
   color: #2c3e50;
   margin-top: 0;
 }
+.intro {
+  margin: 0;
+  font-size: 1.1em;
+}
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid #2c3e50;
+}
+.timeline li {
+  position: relative;
+  padding: 0 0 16px 20px;
+}
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #2c3e50;
+}
+.timeline .year {
+  display: block;
+  font-size: 0.9em;
+  color: #777;
+}
+.timeline .team {
+  font-weight: bold;
+  font-size: 1.15em;
+}
+.timeline p {
+  margin: 4px 0 0;
+}
+.positions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.position {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+.position h3 {
+  margin: 0 0 6px;
+  color: #2c3e50;
+}
+.position p {
+  margin: 0;
+}
 footer {
   text-align: center;
   padding: 20px;
