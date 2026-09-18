@@ -8,6 +8,7 @@
   <link rel="alternate" hreflang="no" href="https://www.mmikalsen.no/volleyball/">
   <link rel="alternate" hreflang="en" href="https://www.mmikalsen.no/en/volleyball/">
   <link rel="stylesheet" href="../style.css">
+  <script src="../js/kamper.js" defer></script>
   <script src="../js/stats.js" defer></script>
 </head>
 <body>
@@ -20,6 +21,7 @@
   <nav>
     <a href="../">← Forsiden</a>
     <a href="#lag">Lag</a>
+    <a href="#kamper">Kamper</a>
     <a href="#statistikk">Statistikk</a>
     <a href="#posisjoner">Posisjoner</a>
     <a class="lang" href="../en/volleyball/" lang="en" hreflang="en">English</a>
@@ -53,8 +55,16 @@
       </ul>
     </section>
 
+    <section id="kamper">
+      <h2>Kamper</h2>
+      <p>Alle kampene jeg har spilt, i Eliteserien og 1. divisjon, inkludert sluttspill, cup og Europacup.</p>
+      <div id="matches"></div>
+      <noscript><p>Kampoversikten krever JavaScript.</p></noscript>
+    </section>
+
     <section id="statistikk">
       <h2>Statistikk</h2>
+      <p>Poeng og statistikk fra kampene med OSI 2 og NTNUI 2 som er registrert hos NVBF.</p>
       <div id="stats"></div>
       <noscript><p>Statistikken krever JavaScript. Du kan se tallene direkte hos <a href="https://nvbf-web.dataproject.com/">NVBF</a>.</p></noscript>
       <p class="stats-source">Kilde: <a href="https://nvbf-web.dataproject.com/" rel="noopener">NVBF / Data Project</a>. Tallene oppdateres automatisk.</p>

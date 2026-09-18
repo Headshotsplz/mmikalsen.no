@@ -1,0 +1,20 @@
+{
+  "note": "Alle kamper Markus har spilt, fra hans egen oversikt (kamper.pdf). Tallene per kategori summeres til kamper per sesong.",
+  "rows": [
+    { "season": "15/16", "level": "div1", "team": "Førde VBK 2", "counts": { "other": 2 } },
+    { "season": "16/17", "level": "elite", "team": "Førde VBK", "counts": { "league": 5, "cup": 2 } },
+    { "season": "17/18", "level": "elite", "team": "Førde VBK", "counts": { "league": 7, "playoff": 4, "cup": 2, "europe": 2, "nordic": 2 } },
+    { "season": "18/19", "level": "elite", "team": "Førde VBK", "counts": { "league": 4, "playoff": 3, "cup": 3, "europe": 3 } },
+    { "season": "18/19", "level": "div1", "team": "Førde VBK 2", "counts": { "league": 12, "ranking": 4 } },
+    { "season": "19/20", "level": "elite", "team": "Førde VBK", "counts": { "league": 12, "cup": 1 } },
+    { "season": "19/20", "level": "div1", "team": "Førde VBK 2", "counts": { "league": 19 } },
+    { "season": "20/21", "level": "elite", "team": "Førde VBK", "counts": { "league": 2 } },
+    { "season": "20/21", "level": "div1", "team": "Førde VBK 2", "counts": { "league": 6 } },
+    { "season": "21/22", "level": "elite", "team": "OSI", "counts": { "league": 7, "playoff": 1, "cup": 1 } },
+    { "season": "21/22", "level": "div1", "team": "OSI 2", "counts": { "league": 8 } },
+    { "season": "22/23", "level": "div1", "team": "OSI 2", "counts": { "league": 16 } },
+    { "season": "23/24", "level": "div1", "team": "NTNUI 2", "counts": { "league": 17 } },
+    { "season": "24/25", "level": "div1", "team": "NTNUI 2", "counts": { "league": 16, "cup": 1 } },
+    { "season": "25/26", "level": "div1", "team": "NTNUI 2", "counts": { "league": 11, "other": 2 } }
+  ]
+}
