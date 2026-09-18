@@ -116,7 +116,8 @@
       `${T.updated}: ${new Date(data.updated).toLocaleString(locale, { dateStyle: 'medium', timeStyle: 'short' })}`
     );
 
-    root.replaceChildren(controls, tiles, chart, el('div', { class: 'table-wrap' }, table), updated);
+    // Lagfilteret er bare nyttig når det finnes mer enn ett lag.
+    root.replaceChildren(...(teams.length > 1 ? [controls] : []), tiles, chart, el('div', { class: 'table-wrap' }, table), updated);
 
     function sortBy(key) {
       if (state.sortKey === key || (key === 'season' && state.sortKey === 'compId')) state.sortDir *= -1;

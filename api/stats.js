@@ -4,6 +4,8 @@
 
 const BASE = 'https://nvbf-web.dataproject.com';
 const PLAYER_ID = '803';
+// Bare statistikk fra disse lagene vises på siden.
+const TEAMS = ['NTNUI 2'];
 
 async function fetchWithTimeout(url, options = {}) {
   return fetch(url, { ...options, signal: AbortSignal.timeout(8000) });
@@ -46,7 +48,7 @@ module.exports = async (req, res) => {
     );
 
     const rows = results
-      .filter((r) => r.status === 'fulfilled' && r.value.p && r.value.p.PlayedMatches > 0)
+      .filter((r) => r.status === 'fulfilled' && r.value.p && r.value.p.PlayedMatches > 0 && TEAMS.includes(r.value.p.Team))
       .map(({ value: { id, name, p } }) => ({
         compId: Number(id),
         competition: name.replace(/\s*\d{2}\/\d{2}$/, ''),
