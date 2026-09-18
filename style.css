@@ -98,6 +98,20 @@ h2 {
 .timeline p {
   margin: 4px 0 0;
 }
+.timeline-photo {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+.timeline .caption {
+  display: block;
+  font-size: 0.85em;
+  color: #777;
+  margin-top: 4px;
+}
 .positions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
