@@ -98,6 +98,16 @@ h2 {
 .timeline p {
   margin: 4px 0 0;
 }
+.timeline .badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f5e6b3;
+  color: #5c4500;
+  font-weight: bold;
+  font-size: 0.95em;
+}
 .timeline-photo {
   display: block;
   width: 100%;
