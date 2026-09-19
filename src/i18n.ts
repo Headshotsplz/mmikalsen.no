@@ -14,8 +14,25 @@ const no = {
   home: {
     title: 'Hei, jeg heter Markus Mikalsen',
     subtitle: 'Velkommen til nettsiden min!',
-    nav: { about: 'Om meg', hobbies: 'Hobbyer', volleyball: 'Volleyball', contact: 'Kontakt' },
-    about: 'Jeg studerer cybersikkerhet.',
+    nav: { about: 'Om meg', studies: 'Studier', hobbies: 'Hobbyer', volleyball: 'Volleyball', contact: 'Kontakt' },
+    about: [
+      'Jeg er en engasjert og målrettet person som liker å utfordre meg selv og lære nye ting.',
+      'Til daglig studerer jeg cybersikkerhet og datakommunikasjon ved NTNU i Trondheim, fordi jeg synes IT-sikkerhet er spennende. Ved siden av studiene er volleyball en stor del av hverdagen min. Jeg har spilt på høyt nivå i mer enn ti år, og det har lært meg mye om samarbeid, disiplin og det å jobbe målrettet over tid.',
+    ],
+    studies: {
+      program: 'Master i cybersikkerhet og datakommunikasjon',
+      school: 'Norges teknisk-naturvitenskapelige universitet (NTNU), Trondheim',
+      year: '3. år',
+      siteTitle: 'Sikkerhet i praksis: denne nettsiden',
+      siteIntro: 'Nettsiden er satt opp med sikkerhet i fokus:',
+      siteItems: [
+        'Streng Content-Security-Policy: bare skript, stiler, bilder og data fra eget domene er tillatt, og ingen inline-kode.',
+        'HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy og Permissions-Policy på alle sider.',
+        'Statistikk fra NVBF hentes via en egen serverfunksjon, så nettleseren aldri kontakter tredjeparter.',
+        'Bilder publiseres uten metadata (EXIF), og CV-en er sjekket for skjulte personopplysninger.',
+        'React og TypeScript med typesjekk før hver publisering, og automatisk dataoppdatering med GitHub Actions.',
+      ],
+    },
     cv: 'Last ned CV (PDF, engelsk)',
   },
   vb: {
@@ -98,8 +115,25 @@ const en: Dict = {
   home: {
     title: 'Hi, my name is Markus Mikalsen',
     subtitle: 'Welcome to my website!',
-    nav: { about: 'About me', hobbies: 'Hobbies', volleyball: 'Volleyball', contact: 'Contact' },
-    about: 'I study cybersecurity.',
+    nav: { about: 'About me', studies: 'Studies', hobbies: 'Hobbies', volleyball: 'Volleyball', contact: 'Contact' },
+    about: [
+      'I am a dedicated and goal-oriented person who likes to challenge myself and learn new things.',
+      'I study cybersecurity and data communication at NTNU in Trondheim, because I find IT security exciting. Alongside my studies, volleyball is a big part of my everyday life. I have played at a high level for more than ten years, which has taught me a lot about teamwork, discipline and working towards goals over time.',
+    ],
+    studies: {
+      program: 'MSc Cybersecurity and Data Communication',
+      school: 'Norwegian University of Science and Technology (NTNU), Trondheim',
+      year: '3rd year',
+      siteTitle: 'Security in practice: this website',
+      siteIntro: 'This website is set up with security in mind:',
+      siteItems: [
+        'Strict Content Security Policy: only scripts, styles, images and data from its own domain are allowed, and no inline code.',
+        'HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy on every page.',
+        'Statistics from NVBF are fetched through a dedicated server function, so the browser never contacts third parties.',
+        'Images are published without metadata (EXIF), and the CV has been checked for hidden personal data.',
+        'React and TypeScript with type checking before every deploy, and automatic data updates with GitHub Actions.',
+      ],
+    },
     cv: 'Download CV (PDF)',
   },
   vb: {
