@@ -9,6 +9,7 @@ const no = {
   theme: { system: 'Tema: system', light: 'Tema: lyst', dark: 'Tema: mørkt' },
   footer: '© 2026 Markus Mikalsen',
   total: 'Totalt',
+  nav: { home: 'Forsiden', volleyball: 'Volleyball', ntnui: 'NTNUI 2 · 26/27' },
   loading: 'Laster …',
   error: 'Klarte ikke å hente dataene akkurat nå. Prøv igjen senere.',
   home: {
@@ -39,7 +40,7 @@ const no = {
     subtitle: 'Kant og diagonal – fra Førde til Trondheim',
     nav: { home: '← Forsiden', teams: 'Lag', stats: 'Statistikk' },
     stats: 'Statistikk',
-    tabs: { career: 'Karriere', seasons: 'Sesonger', perMatch: 'Per kamp', current: '26/27' },
+    tabs: { career: 'Karriere', seasons: 'Sesonger', perMatch: 'Per kamp' },
     intro: 'Volleyball er en av hobbyene mine. Her er lagene jeg har spilt for, kampene mine og statistikk.',
     photoAlt: 'Markus tar en hoppserve i en volleyballkamp.',
     teams: 'Lag',
@@ -92,6 +93,7 @@ const no = {
     source: 'Se kampen hos NVBF',
   },
   current: {
+    subtitle: '1. divisjon 2026/27',
     intro: 'NTNUI 2 i 1. divisjon 2026/27: kamper, resultater, tabell og hvem som har tatt poengene. Oppdateres automatisk.',
     notStarted: (date: string) => `Sesongen starter ${date}. Resultater og spillerstatistikk kommer her etter hvert som kampene spilles.`,
     tiles: { played: 'Kamper', record: 'Seier–tap', sets: 'Sett', position: 'Tabellplass' },
@@ -139,6 +141,7 @@ const en: Dict = {
   theme: { system: 'Theme: system', light: 'Theme: light', dark: 'Theme: dark' },
   footer: '© 2026 Markus Mikalsen',
   total: 'Total',
+  nav: { home: 'Home', volleyball: 'Volleyball', ntnui: 'NTNUI 2 · 26/27' },
   loading: 'Loading …',
   error: 'Could not load the data right now. Please try again later.',
   home: {
@@ -169,7 +172,7 @@ const en: Dict = {
     subtitle: 'Outside hitter and opposite – from Førde to Trondheim',
     nav: { home: '← Home', teams: 'Teams', stats: 'Statistics' },
     stats: 'Statistics',
-    tabs: { career: 'Career', seasons: 'Seasons', perMatch: 'Per match', current: '26/27' },
+    tabs: { career: 'Career', seasons: 'Seasons', perMatch: 'Per match' },
     intro: 'Volleyball is one of my hobbies. Here are the teams I have played for, my matches and statistics.',
     photoAlt: 'Markus hitting a jump serve during a volleyball match.',
     teams: 'Teams',
@@ -222,6 +225,7 @@ const en: Dict = {
     source: 'View the match at NVBF',
   },
   current: {
+    subtitle: '1st division 2026/27',
     intro: 'NTNUI 2 in the 1st division 2026/27: matches, results, table and who scored the points. Updated automatically.',
     notStarted: (date: string) => `The season starts ${date}. Results and player statistics will appear here as the matches are played.`,
     tiles: { played: 'Matches', record: 'Won–lost', sets: 'Sets', position: 'Position' },

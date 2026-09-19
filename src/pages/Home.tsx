@@ -20,6 +20,7 @@ export default function Home({ lang }: { lang: Lang }) {
         { href: '#studies', label: h.nav.studies },
         { href: '#hobbies', label: h.nav.hobbies },
         { href: `${prefix}/volleyball/`, label: h.nav.volleyball },
+        { href: `${prefix}/ntnui/`, label: t.nav.ntnui },
         { href: '#contact', label: h.nav.contact },
       ]}
     >

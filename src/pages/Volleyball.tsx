@@ -4,7 +4,6 @@ import Section from '../components/Section';
 import Tabs from '../components/Tabs';
 import { dictionaries } from '../i18n';
 import type { Lang } from '../types';
-import CurrentSeason from '../volleyball/CurrentSeason';
 import MatchOverview from '../volleyball/MatchOverview';
 import PerMatchStats from '../volleyball/PerMatchStats';
 import SeasonStats from '../volleyball/SeasonStats';
@@ -28,6 +27,7 @@ export default function Volleyball({ lang }: { lang: Lang }) {
         { href: lang === 'en' ? '/en/' : '/', label: v.nav.home },
         { href: '#teams', label: v.nav.teams },
         { href: '#statistics', label: v.nav.stats },
+        { href: lang === 'en' ? '/en/ntnui/' : '/ntnui/', label: t.nav.ntnui },
       ]}
     >
       <Section>
@@ -76,16 +76,6 @@ export default function Volleyball({ lang }: { lang: Lang }) {
                 <>
                   <TabIntro>{t.perMatch.intro}</TabIntro>
                   <PerMatchStats lang={lang} t={t} />
-                </>
-              ),
-            },
-            {
-              id: 'current',
-              label: v.tabs.current,
-              content: (
-                <>
-                  <TabIntro>{t.current.intro}</TabIntro>
-                  <CurrentSeason lang={lang} t={t} />
                 </>
               ),
             },

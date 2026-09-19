@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
-// Flere HTML-sider (samme adresser som før): norsk og engelsk forside og volleyballside.
+// Flere HTML-sider (samme adresser som før): norsk og engelsk forside, volleyballside og NTNUI-side.
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
@@ -14,6 +14,8 @@ export default defineConfig({
         homeEn: 'en/index.html',
         volleyball: 'volleyball/index.html',
         volleyballEn: 'en/volleyball/index.html',
+        ntnui: 'ntnui/index.html',
+        ntnuiEn: 'en/ntnui/index.html',
       },
     },
   },
