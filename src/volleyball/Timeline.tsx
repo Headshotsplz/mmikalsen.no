@@ -34,6 +34,9 @@ export default function Timeline({ t }: { t: Dict }) {
         />
         <span className="mt-1 block text-sm text-slate-500 dark:text-slate-400">{v.forde.caption}</span>
       </Entry>
+      <Entry years={v.osi.years} team="OSI" logo={null}>
+        <p className="mt-1">{v.osi.text}</p>
+      </Entry>
       <Entry years={v.ntnui.years} team="NTNUI" logo={<img src="/images/logo-ntnui.webp" width={2000} height={810} alt="" className="h-10 w-auto" />}>
         <p className="mt-1">{v.ntnui.text}</p>
       </Entry>
