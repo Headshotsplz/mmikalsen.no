@@ -23,7 +23,6 @@ export default function Volleyball({ lang }: { lang: Lang }) {
         { href: '#matches', label: v.nav.matches },
         { href: '#statistics', label: v.nav.stats },
         { href: '#per-match', label: v.nav.perMatch },
-        { href: '#positions', label: v.nav.positions },
       ]}
     >
       <Section>
@@ -55,10 +54,6 @@ export default function Volleyball({ lang }: { lang: Lang }) {
       <Section id="per-match" title={t.perMatch.title}>
         <p className="mb-4">{t.perMatch.intro}</p>
         <PerMatchStats lang={lang} t={t} />
-      </Section>
-
-      <Section id="positions" title={v.positions}>
-        <p>{v.positionsText}</p>
       </Section>
     </Layout>
   );

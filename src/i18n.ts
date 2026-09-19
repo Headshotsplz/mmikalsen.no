@@ -43,7 +43,7 @@ const no = {
   },
   vb: {
     subtitle: 'Kant og diagonal – fra Førde til Trondheim',
-    nav: { home: '← Forsiden', teams: 'Lag', matches: 'Kamper', stats: 'Statistikk', perMatch: 'Per kamp', positions: 'Posisjoner' },
+    nav: { home: '← Forsiden', teams: 'Lag', matches: 'Kamper', stats: 'Statistikk', perMatch: 'Per kamp' },
     intro: 'Volleyball er en av hobbyene mine. Her er lagene jeg har spilt for, kampene mine og statistikk.',
     photoAlt: 'Markus tar en hoppserve i en volleyballkamp.',
     teams: 'Lag',
@@ -56,8 +56,6 @@ const no = {
     },
     osi: { years: '2021 – 2023', text: 'Spilte for OSI, studentidrettslaget i Oslo, i 21/22 og 22/23 – både i Eliteserien og 1. divisjon.' },
     ntnui: { years: '2023 –', text: 'Spiller for NTNUI, idrettslaget til studentene ved NTNU i Trondheim.' },
-    positions: 'Posisjoner',
-    positionsText: 'Kant og diagonal.',
   },
   matches: {
     title: 'Kamper',
@@ -149,7 +147,7 @@ const en: Dict = {
   },
   vb: {
     subtitle: 'Outside hitter and opposite – from Førde to Trondheim',
-    nav: { home: '← Home', teams: 'Teams', matches: 'Matches', stats: 'Statistics', perMatch: 'Per match', positions: 'Positions' },
+    nav: { home: '← Home', teams: 'Teams', matches: 'Matches', stats: 'Statistics', perMatch: 'Per match' },
     intro: 'Volleyball is one of my hobbies. Here are the teams I have played for, my matches and statistics.',
     photoAlt: 'Markus hitting a jump serve during a volleyball match.',
     teams: 'Teams',
@@ -162,8 +160,6 @@ const en: Dict = {
     },
     osi: { years: '2021 – 2023', text: 'Played for OSI, the student sports club in Oslo, in 2021/22 and 2022/23 – in both the top division and the 1st division.' },
     ntnui: { years: '2023 –', text: 'Playing for NTNUI, the student sports club at NTNU in Trondheim.' },
-    positions: 'Positions',
-    positionsText: 'Outside hitter and opposite.',
   },
   matches: {
     title: 'Matches',
