@@ -3,82 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Volleyball – the teams Markus Mikalsen has played for and the positions he plays.">
+  <meta name="description" content="Volleyball – the teams Markus Mikalsen has played for, matches and statistics.">
   <title>Volleyball – Markus Mikalsen</title>
   <link rel="alternate" hreflang="no" href="https://www.mmikalsen.no/volleyball/">
   <link rel="alternate" hreflang="en" href="https://www.mmikalsen.no/en/volleyball/">
-  <link rel="stylesheet" href="../../style.css">
-  <script src="../../js/kamper.js" defer></script>
-  <script src="../../js/stats.js" defer></script>
+  <script type="module" src="/src/main.tsx"></script>
 </head>
 <body>
-
-  <header>
-    <h1>Volleyball</h1>
-    <p>Outside hitter and opposite – from Førde to Trondheim</p>
-  </header>
-
-  <nav>
-    <a href="../">← Home</a>
-    <a href="#teams">Teams</a>
-    <a href="#matches-section">Matches</a>
-    <a href="#statistics">Statistics</a>
-    <a href="#positions">Positions</a>
-    <a class="lang" href="../../volleyball/" lang="no" hreflang="no">Norsk</a>
-  </nav>
-
-  <main>
-    <section>
-      <p class="intro">Volleyball is one of my hobbies. Here are the teams I have played for and the positions I play.</p>
-    </section>
-
-    <figure class="photo">
-      <img src="../../images/volleyball-serve.jpg" width="900" height="1200" alt="Markus hitting a jump serve during a volleyball match.">
-    </figure>
-
-    <section id="teams">
-      <h2>Teams</h2>
-      <ul class="timeline">
-        <li>
-          <span class="year">Until 2021</span>
-          <span class="team"><img class="team-logo" src="../../images/logo-forde.jpg" width="160" height="160" alt="">Førde</span>
-          <p>Played for Førde until 2021 and won the King's Cup (the Norwegian Cup) three times with the team.</p>
-          <span class="badge">🏆 3 × King's Cup</span>
-          <img class="timeline-photo" src="../../images/forde-lag.jpg" width="765" height="765" alt="The Førde team celebrating together in the hall.">
-          <span class="caption">From my time in Førde</span>
-        </li>
-        <li>
-          <span class="year">2023 –</span>
-          <span class="team"><img class="team-logo" src="../../images/logo-ntnui.webp" width="2000" height="810" alt="">NTNUI</span>
-          <p>Playing for NTNUI, the student sports club at NTNU in Trondheim.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="matches-section">
-      <h2>Matches</h2>
-      <p>Every match I have played in the top division and 1st division, including playoffs, cup and European cup.</p>
-      <div id="matches"></div>
-      <noscript><p>The match overview requires JavaScript.</p></noscript>
-    </section>
-
-    <section id="statistics">
-      <h2>Statistics</h2>
-      <p>Points and statistics from the OSI 2 and NTNUI 2 matches registered with NVBF.</p>
-      <div id="stats"></div>
-      <noscript><p>The statistics require JavaScript. You can see the numbers directly at <a href="https://nvbf-web.dataproject.com/">NVBF</a>.</p></noscript>
-      <p class="stats-source">Source: <a href="https://nvbf-web.dataproject.com/" rel="noopener">NVBF / Data Project</a>. The numbers update automatically.</p>
-    </section>
-
-    <section id="positions">
-      <h2>Positions</h2>
-      <p>Outside hitter and opposite.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Markus Mikalsen</p>
-  </footer>
-
+  <div id="root" data-page="volleyball"></div>
+  <noscript><p>This page requires JavaScript.</p></noscript>
 </body>
 </html>
