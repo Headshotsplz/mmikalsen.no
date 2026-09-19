@@ -6,7 +6,7 @@
     { "season": "17/18", "level": "elite", "team": "Førde VBK", "counts": { "league": 7, "playoff": 4, "cup": 2, "europe": 2, "nordic": 2 }, "placement": { "position": 3, "teams": 8 } },
     { "season": "18/19", "level": "elite", "team": "Førde VBK", "counts": { "league": 4, "playoff": 3, "cup": 3, "europe": 3 }, "placement": { "position": 3, "teams": 8 }, "titles": ["cupGold", "playoffGold"] },
     { "season": "18/19", "level": "div1", "team": "Førde VBK 2", "counts": { "league": 12, "ranking": 4 }, "placement": { "position": 4, "teams": 5, "group": "A" } },
-    { "season": "19/20", "level": "elite", "team": "Førde VBK", "counts": { "league": 12, "cup": 1 }, "placement": { "position": 3, "teams": 9 } },
+    { "season": "19/20", "level": "elite", "team": "Førde VBK", "counts": { "league": 12, "cup": 1 }, "placement": { "position": 3, "teams": 9 }, "titles": ["cupGold"] },
     { "season": "19/20", "level": "div1", "team": "Førde VBK 2", "counts": { "league": 19 }, "placement": { "position": 3, "teams": 11 } },
     { "season": "20/21", "level": "elite", "team": "Førde VBK", "counts": { "league": 2 }, "placement": { "position": 3, "teams": 9 } },
     { "season": "20/21", "level": "div1", "team": "Førde VBK 2", "counts": { "league": 6 }, "placement": { "position": 2, "teams": 11 } },
