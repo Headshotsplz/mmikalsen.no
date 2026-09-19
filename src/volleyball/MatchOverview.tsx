@@ -46,6 +46,7 @@ export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
   const clubs = [...new Set(rows.map((r) => r.club))];
   const visible = rows.filter((r) => !club || r.club === club);
   const seasons = [...new Set(visible.map((r) => r.season))];
+  const europe = sum(visible, (r) => r.europe);
 
   const columns: Column<ClubSeason>[] = [
     { key: 'season', label: m.cols.season, value: (r) => r.season },
@@ -68,10 +69,9 @@ export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
       <StatTiles
         tiles={[
           { value: formatNumber(lang, sum(visible, (r) => r.matches)), label: m.total },
-          ...clubs
-            .filter((c) => !club || c === club)
-            .map((c) => ({ value: formatNumber(lang, sum(visible.filter((r) => r.club === c), (r) => r.matches)), label: c })),
-          { value: formatNumber(lang, sum(visible, (r) => r.europe)), label: m.europe },
+          // Én boks per klubb bare når alle klubber vises, og Europacup bare hvis det finnes kamper.
+          ...(club ? [] : clubs).map((c) => ({ value: formatNumber(lang, sum(visible.filter((r) => r.club === c), (r) => r.matches)), label: c })),
+          ...(europe > 0 ? [{ value: formatNumber(lang, europe), label: m.europe }] : []),
         ]}
       />
 
