@@ -95,6 +95,15 @@ h2 {
   font-weight: bold;
   font-size: 1.15em;
 }
+.timeline .team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.team-logo {
+  height: 40px;
+  width: auto;
+}
 .timeline p {
   margin: 4px 0 0;
 }
