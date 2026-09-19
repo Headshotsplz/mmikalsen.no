@@ -25,11 +25,12 @@ interface Props {
   bars: Bar[];
   hint: string;
   legend?: LegendItem[];
+  note?: string; // kort forklaring i legenden, f.eks. "★ = tittel"
 }
 
 // Søylediagram i SVG. Viser detaljer under grafen når man holder over,
 // trykker på eller tabber til en søyle.
-export default function BarChart({ caption, bars, hint, legend }: Props) {
+export default function BarChart({ caption, bars, hint, legend, note }: Props) {
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const active = bars.find((b) => b.key === activeKey);
 
@@ -45,14 +46,15 @@ export default function BarChart({ caption, bars, hint, legend }: Props) {
   return (
     <figure className="mb-5">
       <figcaption className="mb-2 font-semibold text-brand dark:text-slate-100">{caption}</figcaption>
-      {legend && (
+      {(legend || note) && (
         <div className="mb-2 flex flex-wrap gap-4 text-xs text-slate-600 dark:text-slate-300">
-          {legend.map((l) => (
+          {legend?.map((l) => (
             <span key={l.label} className="inline-flex items-center gap-1.5">
               <span className={`inline-block h-3 w-3 rounded-sm ${l.className}`} />
               {l.label}
             </span>
           ))}
+          {note && <span>{note}</span>}
         </div>
       )}
       <svg viewBox={`0 0 ${width} ${top + h + bottom}`} role="img" aria-label={caption} className="block max-h-64 w-full">
@@ -100,7 +102,10 @@ export default function BarChart({ caption, bars, hint, legend }: Props) {
           );
         })}
       </svg>
-      <p aria-live="polite" className="mt-2 min-h-[1.5em] text-sm text-slate-600 dark:text-slate-300">
+      <p
+        aria-live="polite"
+        className={`mt-2 min-h-[1.5em] ${active ? 'text-sm text-slate-700 dark:text-slate-200' : 'text-xs text-slate-500 dark:text-slate-400'}`}
+      >
         {active ? active.detail : hint}
       </p>
     </figure>

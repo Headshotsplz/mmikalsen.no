@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import BarChart from '../components/BarChart';
 import Select, { Toolbar } from '../components/Select';
-import SortableTable, { type Column } from '../components/SortableTable';
 import StatTiles from '../components/StatTiles';
 import { Muted } from '../components/Section';
-import { clubOf, formatNumber, localeOf, sum } from '../lib/format';
+import { clubOf, formatNumber, sum } from '../lib/format';
 import { useJson } from '../lib/useJson';
 import type { Dict } from '../i18n';
 import type { Lang, MatchesFile, Title } from '../types';
@@ -14,11 +13,10 @@ interface ClubSeason {
   season: string;
   club: string;
   matches: number;
-  europe: number;
   titles: Title[];
 }
 
-// Alle kamper fra Markus sin egen liste (public/data/kamper.json), samlet per klubb.
+// Karriere: alle kamper fra Markus sin egen liste (public/data/kamper.json), samlet per klubb.
 export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
   const data = useJson<MatchesFile>('/data/kamper.json');
   const [club, setClub] = useState('');
@@ -31,9 +29,8 @@ export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
   for (const row of data.data.rows) {
     const c = clubOf(row.team);
     const key = `${row.season}|${c}`;
-    const g = grouped.get(key) ?? { season: row.season, club: c, matches: 0, europe: 0, titles: [] };
+    const g = grouped.get(key) ?? { season: row.season, club: c, matches: 0, titles: [] };
     g.matches += sum(Object.values(row.counts), (n) => n ?? 0);
-    g.europe += row.counts.europe ?? 0;
     g.titles.push(...(row.titles ?? []));
     grouped.set(key, g);
   }
@@ -41,31 +38,10 @@ export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
   const clubs = [...new Set(rows.map((r) => r.club))];
   const visible = rows.filter((r) => !club || r.club === club);
   const seasons = [...new Set(visible.map((r) => r.season))];
-  const europe = sum(visible, (r) => r.europe);
 
-  const columns: Column<ClubSeason>[] = [
-    { key: 'season', label: m.cols.season, value: (r) => r.season },
-    { key: 'club', label: m.cols.club, value: (r) => r.club },
-    { key: 'matches', label: m.cols.matches, numeric: true, value: (r) => r.matches },
-    {
-      key: 'titles',
-      label: m.cols.titles,
-      value: (r) => (r.titles.length ? -r.titles.length : null),
-      wrap: true,
-      render: (r) => (
-        <div className="flex flex-wrap gap-1">
-          {r.titles.map((title) => (
-            <span
-              key={title}
-              className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-900 dark:bg-amber-900/50 dark:text-amber-200"
-            >
-              {m.titles[title]}
-            </span>
-          ))}
-        </div>
-      ),
-    },
-  ];
+  // Titler samlet: "🏆 NM-gull i cupen – 18/19, 19/20, 20/21"
+  const titleSeasons = new Map<Title, string[]>();
+  for (const r of visible) for (const title of r.titles) titleSeasons.set(title, [...(titleSeasons.get(title) ?? []), r.season]);
 
   return (
     <>
@@ -81,15 +57,28 @@ export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
       <StatTiles
         tiles={[
           { value: formatNumber(lang, sum(visible, (r) => r.matches)), label: m.total },
-          // Én boks per klubb bare når alle klubber vises, og Europacup bare hvis det finnes kamper.
+          // Én boks per klubb bare når alle klubber vises.
           ...(club ? [] : clubs).map((c) => ({ value: formatNumber(lang, sum(visible.filter((r) => r.club === c), (r) => r.matches)), label: c })),
-          ...(europe > 0 ? [{ value: formatNumber(lang, europe), label: m.europe }] : []),
         ]}
       />
+
+      {titleSeasons.size > 0 && (
+        <ul className="mb-5 flex flex-wrap gap-2">
+          {[...titleSeasons].map(([title, list]) => (
+            <li
+              key={title}
+              className="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-900 dark:bg-amber-900/50 dark:text-amber-200"
+            >
+              <span className="font-bold">{m.titles[title]}</span> {list.join(', ')}
+            </li>
+          ))}
+        </ul>
+      )}
 
       <BarChart
         caption={m.chart}
         hint={t.hint}
+        note={`★ = ${m.titleWord}`}
         legend={clubs.map((c) => ({ label: c, className: clubColor(c).bg }))}
         bars={seasons.map((season) => {
           const parts = visible.filter((r) => r.season === season);
@@ -107,24 +96,6 @@ export default function MatchOverview({ lang, t }: { lang: Lang; t: Dict }) {
           };
         })}
       />
-
-      <SortableTable
-        rows={visible}
-        columns={columns}
-        rowKey={(r) => `${r.season}|${r.club}`}
-        initialSort={{ key: 'season', dir: -1 }}
-        locale={localeOf(lang)}
-        footer={
-          <tr>
-            <th colSpan={2}>{t.total}</th>
-            <td className="text-right tabular-nums">{formatNumber(lang, sum(visible, (r) => r.matches))}</td>
-            <td />
-          </tr>
-        }
-      />
-      <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
-        {t.sortHint} ★ = {m.titleWord}.
-      </p>
     </>
   );
 }

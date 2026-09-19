@@ -1,11 +1,17 @@
+import type { ReactNode } from 'react';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
+import Tabs from '../components/Tabs';
 import { dictionaries } from '../i18n';
 import type { Lang } from '../types';
 import MatchOverview from '../volleyball/MatchOverview';
 import PerMatchStats from '../volleyball/PerMatchStats';
 import SeasonStats from '../volleyball/SeasonStats';
 import Timeline from '../volleyball/Timeline';
+
+function TabIntro({ children }: { children: ReactNode }) {
+  return <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">{children}</p>;
+}
 
 export default function Volleyball({ lang }: { lang: Lang }) {
   const t = dictionaries[lang];
@@ -20,9 +26,7 @@ export default function Volleyball({ lang }: { lang: Lang }) {
       nav={[
         { href: lang === 'en' ? '/en/' : '/', label: v.nav.home },
         { href: '#teams', label: v.nav.teams },
-        { href: '#matches', label: v.nav.matches },
         { href: '#statistics', label: v.nav.stats },
-        { href: '#per-match', label: v.nav.perMatch },
       ]}
     >
       <Section>
@@ -41,19 +45,41 @@ export default function Volleyball({ lang }: { lang: Lang }) {
         <Timeline t={t} />
       </Section>
 
-      <Section id="matches" title={t.matches.title}>
-        <p className="mb-4">{t.matches.intro}</p>
-        <MatchOverview lang={lang} t={t} />
-      </Section>
-
-      <Section id="statistics" title={t.stats.title}>
-        <p className="mb-4">{t.stats.intro}</p>
-        <SeasonStats lang={lang} t={t} />
-      </Section>
-
-      <Section id="per-match" title={t.perMatch.title}>
-        <p className="mb-4">{t.perMatch.intro}</p>
-        <PerMatchStats lang={lang} t={t} />
+      <Section id="statistics" title={v.stats}>
+        <Tabs
+          tabs={[
+            {
+              id: 'career',
+              label: v.tabs.career,
+              content: (
+                <>
+                  <TabIntro>{t.matches.intro}</TabIntro>
+                  <MatchOverview lang={lang} t={t} />
+                </>
+              ),
+            },
+            {
+              id: 'seasons',
+              label: v.tabs.seasons,
+              content: (
+                <>
+                  <TabIntro>{t.stats.intro}</TabIntro>
+                  <SeasonStats lang={lang} t={t} />
+                </>
+              ),
+            },
+            {
+              id: 'per-match',
+              label: v.tabs.perMatch,
+              content: (
+                <>
+                  <TabIntro>{t.perMatch.intro}</TabIntro>
+                  <PerMatchStats lang={lang} t={t} />
+                </>
+              ),
+            },
+          ]}
+        />
       </Section>
     </Layout>
   );
