@@ -1,10 +1,4 @@
-import type { Lang, MatchCategory, Title } from './types';
-
-// 1 -> "1st", 2 -> "2nd", 3 -> "3rd", 4 -> "4th", 11 -> "11th"
-function ordinal(n: number) {
-  const suffix = n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[n % 10] ?? 'th';
-  return `${n}${suffix}`;
-}
+import type { Lang, Title } from './types';
 
 export function getLang(): Lang {
   return document.documentElement.lang === 'en' ? 'en' : 'no';
@@ -65,14 +59,8 @@ const no = {
     total: 'Kamper totalt',
     europe: 'Europacup',
     chart: 'Kamper per sesong',
-    levels: { elite: 'Eliteserien', div1: '1. divisjon' },
-    cats: { league: 'serie', playoff: 'sluttspill', cup: 'cup', europe: 'Europacup', nordic: 'nordisk klubbmesterskap', ranking: 'ranking', other: 'andre' } as Record<MatchCategory, string>,
-    cols: { season: 'Sesong', club: 'Klubb', matches: 'Kamper', placement: 'Plassering', details: 'Fordeling' },
+    cols: { season: 'Sesong', club: 'Klubb', matches: 'Kamper', titles: 'Titler' },
     matchesWord: 'kamper',
-    place: (position: number, teams: number) => `${position}. plass av ${teams}`,
-    group: (g: string) => `avd. ${g}`,
-    qualified: 'vant kvalifiseringen',
-    placementNote: 'Plassering i grunnserien fra NVBF sine tabeller.',
     titleWord: 'tittel',
     titles: { leagueGold: '🥇 Seriegull', cupGold: '🏆 NM-gull i cupen', playoffGold: '🥇 NM-gull i sluttspillet' } as Record<Title, string>,
   },
@@ -169,14 +157,8 @@ const en: Dict = {
     total: 'Total matches',
     europe: 'European cup',
     chart: 'Matches per season',
-    levels: { elite: 'Top division', div1: '1st division' },
-    cats: { league: 'league', playoff: 'playoffs', cup: 'cup', europe: 'European cup', nordic: 'Nordic club championship', ranking: 'ranking', other: 'other' },
-    cols: { season: 'Season', club: 'Club', matches: 'Matches', placement: 'Placing', details: 'Breakdown' },
+    cols: { season: 'Season', club: 'Club', matches: 'Matches', titles: 'Titles' },
     matchesWord: 'matches',
-    place: (position: number, teams: number) => `${ordinal(position)} of ${teams}`,
-    group: (g: string) => `group ${g}`,
-    qualified: 'won the qualification',
-    placementNote: 'Regular-season placing from the NVBF tables.',
     titleWord: 'title',
     titles: { leagueGold: '🥇 League gold', cupGold: '🏆 Norwegian champions (cup)', playoffGold: '🥇 Norwegian champions (playoffs)' },
   },

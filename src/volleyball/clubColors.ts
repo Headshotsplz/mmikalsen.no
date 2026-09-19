@@ -1,7 +1,7 @@
 // Faste farger per klubb i grafene (lys og mørk modus).
 const COLORS: Record<string, { fill: string; bg: string }> = {
-  Førde: { fill: 'fill-brand dark:fill-sky-300', bg: 'bg-brand dark:bg-sky-300' },
-  OSI: { fill: 'fill-brand-muted dark:fill-slate-400', bg: 'bg-brand-muted dark:bg-slate-400' },
+  Førde: { fill: 'fill-blue-600 dark:fill-blue-400', bg: 'bg-blue-600 dark:bg-blue-400' },
+  OSI: { fill: 'fill-red-600 dark:fill-red-400', bg: 'bg-red-600 dark:bg-red-400' },
   NTNUI: { fill: 'fill-ntnui dark:fill-emerald-400', bg: 'bg-ntnui dark:bg-emerald-400' },
 };
 
