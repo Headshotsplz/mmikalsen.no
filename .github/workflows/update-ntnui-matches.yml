@@ -1,7 +1,9 @@
 name: Oppdater kampstatistikk
 
-# Henter nye NTNUI 2-kamper fra NVBF hver natt og lagrer dem i
-# public/data/ntnui-matches.json. Vercel publiserer automatisk ved endring.
+# Henter nye kamper og statistikk hver natt:
+#  - NTNUI 2 per kamp (tidligere sesonger)  -> public/data/ntnui-matches.json
+#  - NTNUI 2 sesongen 2026/27 (kamper, tabell, spillere) -> public/data/ntnui-2627.json
+# Vercel publiserer automatisk når filene endres.
 on:
   schedule:
     - cron: '0 4 * * *'
@@ -13,7 +15,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -21,17 +23,20 @@ jobs:
         with:
           node-version: 22
 
-      - name: Hent nye kamper
+      - name: Hent nye kamper (tidligere sesonger)
         run: node scripts/update-ntnui-matches.mjs
+
+      - name: Hent sesongen 2026/27
+        run: node scripts/update-ntnui-2627.mjs
 
       - name: Lagre endringer
         run: |
-          if git diff --quiet -- public/data/ntnui-matches.json; then
-            echo "Ingen nye kamper."
+          if git diff --quiet -- public/data/; then
+            echo "Ingen endringer."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/ntnui-matches.json
-          git commit -m "Oppdater kampstatistikk fra NVBF"
+          git add public/data/ntnui-matches.json public/data/ntnui-2627.json
+          git commit -m "Oppdater kampstatistikk fra NVBF og VolleyLive"
           git push

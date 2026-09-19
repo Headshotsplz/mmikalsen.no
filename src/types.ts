@@ -61,6 +61,50 @@ export interface TeamMatch {
   stats: PlayerMatchStats | null;
   source: string;
 }
+// public/data/ntnui-2627.json – NTNUI 2 i 1. divisjon 2026/27
+export interface SeasonPlayerLine {
+  number: number;
+  name: string;
+  sets: number;
+  points: number;
+  attack: number;
+  block: number;
+  ace: number;
+}
+export interface SeasonFixture {
+  id: string;
+  date: string;
+  round: string;
+  venue: string;
+  home: boolean;
+  opponent: string;
+  setsFor: number | null;
+  setsAgainst: number | null;
+  finished: boolean;
+  sets: [number, number][] | null; // poeng per sett, [NTNUI, motstander]
+  players: SeasonPlayerLine[] | null;
+  statsUrl: string | null;
+}
+export interface TableRow {
+  position: number;
+  team: string;
+  played: number;
+  won: number;
+  lost: number;
+  setsFor: number;
+  setsAgainst: number;
+  points: number;
+  us: boolean;
+}
+export interface CurrentSeasonFile {
+  updated: string;
+  season: string;
+  team: string;
+  tournament: string;
+  table: TableRow[];
+  matches: SeasonFixture[];
+}
+
 export interface TeamMatchesFile {
   updated: string;
   team: string;
