@@ -1,4 +1,10 @@
-import type { Lang, MatchCategory } from './types';
+import type { Lang, MatchCategory, Title } from './types';
+
+// 1 -> "1st", 2 -> "2nd", 3 -> "3rd", 4 -> "4th", 11 -> "11th"
+function ordinal(n: number) {
+  const suffix = n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[n % 10] ?? 'th';
+  return `${n}${suffix}`;
+}
 
 export function getLang(): Lang {
   return document.documentElement.lang === 'en' ? 'en' : 'no';
@@ -63,8 +69,14 @@ const no = {
     chart: 'Kamper per sesong',
     levels: { elite: 'Eliteserien', div1: '1. divisjon' },
     cats: { league: 'serie', playoff: 'sluttspill', cup: 'cup', europe: 'Europacup', nordic: 'nordisk klubbmesterskap', ranking: 'ranking', other: 'andre' } as Record<MatchCategory, string>,
-    cols: { season: 'Sesong', club: 'Klubb', matches: 'Kamper', details: 'Fordeling' },
+    cols: { season: 'Sesong', club: 'Klubb', matches: 'Kamper', placement: 'Plassering', details: 'Fordeling' },
     matchesWord: 'kamper',
+    place: (position: number, teams: number) => `${position}. plass av ${teams}`,
+    group: (g: string) => `avd. ${g}`,
+    qualified: 'vant kvalifiseringen',
+    placementNote: 'Plassering i grunnserien fra NVBF sine tabeller.',
+    titleWord: 'tittel',
+    titles: { leagueGold: '🥇 Seriegull', cupGold: '🏆 NM-gull i cupen', playoffGold: '🥇 NM-gull i sluttspillet' } as Record<Title, string>,
   },
   stats: {
     title: 'Statistikk',
@@ -80,10 +92,9 @@ const no = {
   },
   perMatch: {
     title: 'Statistikk per kamp – NTNUI',
-    intro: 'Alle kampene med NTNUI 2 i 1. divisjon. Oppdateres automatisk hver natt når nye kamper er spilt.',
+    intro: 'Alle kampene jeg har spilt for NTNUI 2 i 1. divisjon. Oppdateres automatisk hver natt når nye kamper er spilt.',
     season: 'Sesong',
     allSeasons: 'Alle sesonger',
-    onlyPlayed: 'Bare kamper jeg spilte',
     tiles: { played: 'Kamper spilt', points: 'Poeng', average: 'Poeng per kamp', attackPct: 'Angrep %', best: 'Flest poeng i én kamp' },
     chart: 'Poeng per kamp',
     cols: { date: 'Dato', opponent: 'Motstander', venue: 'H/B', result: 'Resultat', points: 'Poeng', attack: 'Angrep', attackPct: 'Angrep %', block: 'Blokk', ace: 'Ess', sets: 'Sett' },
@@ -164,8 +175,14 @@ const en: Dict = {
     chart: 'Matches per season',
     levels: { elite: 'Top division', div1: '1st division' },
     cats: { league: 'league', playoff: 'playoffs', cup: 'cup', europe: 'European cup', nordic: 'Nordic club championship', ranking: 'ranking', other: 'other' },
-    cols: { season: 'Season', club: 'Club', matches: 'Matches', details: 'Breakdown' },
+    cols: { season: 'Season', club: 'Club', matches: 'Matches', placement: 'Placing', details: 'Breakdown' },
     matchesWord: 'matches',
+    place: (position: number, teams: number) => `${ordinal(position)} of ${teams}`,
+    group: (g: string) => `group ${g}`,
+    qualified: 'won the qualification',
+    placementNote: 'Regular-season placing from the NVBF tables.',
+    titleWord: 'title',
+    titles: { leagueGold: '🥇 League gold', cupGold: '🏆 Norwegian champions (cup)', playoffGold: '🥇 Norwegian champions (playoffs)' },
   },
   stats: {
     title: 'Statistics',
@@ -181,10 +198,9 @@ const en: Dict = {
   },
   perMatch: {
     title: 'Statistics per match – NTNUI',
-    intro: 'Every NTNUI 2 match in the 1st division. Updated automatically every night when new matches have been played.',
+    intro: 'Every match I have played for NTNUI 2 in the 1st division. Updated automatically every night when new matches have been played.',
     season: 'Season',
     allSeasons: 'All seasons',
-    onlyPlayed: 'Only matches I played',
     tiles: { played: 'Matches played', points: 'Points', average: 'Points per match', attackPct: 'Attack %', best: 'Most points in one match' },
     chart: 'Points per match',
     cols: { date: 'Date', opponent: 'Opponent', venue: 'H/A', result: 'Result', points: 'Points', attack: 'Attack', attackPct: 'Attack %', block: 'Block', ace: 'Aces', sets: 'Sets' },

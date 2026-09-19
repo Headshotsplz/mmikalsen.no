@@ -15,18 +15,17 @@ const pct = (made: number, attempts: number) => (attempts > 0 ? Math.round((made
 export default function PerMatchStats({ lang, t }: { lang: Lang; t: Dict }) {
   const data = useJson<TeamMatchesFile>('/data/ntnui-matches.json');
   const [season, setSeason] = useState<string | null>(null);
-  const [onlyPlayed, setOnlyPlayed] = useState(true);
   const p = t.perMatch;
 
   if (data.status === 'loading') return <Muted>{t.loading}</Muted>;
   if (data.status === 'error') return <Muted>{t.error}</Muted>;
 
-  const all = data.data.matches;
+  // Bare kamper Markus faktisk spilte (var på banen i minst ett sett).
+  const all = data.data.matches.filter((m) => m.played);
   const seasons = [...new Set(all.map((m) => m.season))].sort();
   const current = season ?? seasons[seasons.length - 1] ?? '';
-  const inSeason = all.filter((m) => !current || m.season === current);
-  const visible = onlyPlayed ? inSeason.filter((m) => m.played) : inSeason;
-  const played = inSeason.filter((m) => m.played);
+  const played = all.filter((m) => !current || m.season === current);
+  const visible = played;
 
   const points = sum(played, (m) => m.stats?.points ?? 0);
   const maxPoints = Math.max(0, ...played.map((m) => m.stats?.points ?? 0));
@@ -85,10 +84,6 @@ export default function PerMatchStats({ lang, t }: { lang: Lang; t: Dict }) {
           onChange={(v) => setSeason(v)}
           options={[...seasons.map((s) => ({ value: s, label: s })).reverse(), { value: '', label: p.allSeasons }]}
         />
-        <label className="flex items-center gap-2 text-sm">
-          <input type="checkbox" checked={onlyPlayed} onChange={(e) => setOnlyPlayed(e.target.checked)} className="h-4 w-4 accent-ntnui" />
-          {p.onlyPlayed}
-        </label>
       </Toolbar>
 
       <StatTiles
@@ -138,7 +133,7 @@ export default function PerMatchStats({ lang, t }: { lang: Lang; t: Dict }) {
         rowKey={(m) => m.id}
         initialSort={{ key: 'date', dir: -1 }}
         locale={localeOf(lang)}
-        rowClassName={(m) => (best.includes(m) ? 'bg-amber-50 dark:bg-amber-950/40' : m.played ? '' : 'text-slate-400 dark:text-slate-500')}
+        rowClassName={(m) => (best.includes(m) ? 'bg-amber-50 dark:bg-amber-950/40' : '')}
       />
 
       <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">

@@ -2,11 +2,20 @@ export type Lang = 'no' | 'en';
 
 // public/data/kamper.json – Markus sin egen kampliste
 export type MatchCategory = 'league' | 'playoff' | 'cup' | 'europe' | 'nordic' | 'ranking' | 'other';
+export type Title = 'leagueGold' | 'cupGold' | 'playoffGold';
+export interface Placement {
+  position: number;
+  teams: number;
+  group?: string; // avdeling, f.eks. "A"
+  qualified?: boolean; // vant kvalifiseringen og beholdt plassen
+}
 export interface SeasonMatches {
   season: string;
   level: 'elite' | 'div1';
   team: string;
   counts: Partial<Record<MatchCategory, number>>;
+  placement?: Placement; // plassering i grunnserien (NVBF)
+  titles?: Title[];
 }
 export interface MatchesFile {
   rows: SeasonMatches[];
