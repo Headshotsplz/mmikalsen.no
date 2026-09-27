@@ -1,11 +1,66 @@
 {
-  "updated": "2026-09-19T11:26:52.092Z",
+  "updated": "2026-09-27T09:45:58.359Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
   "table": [
     {
       "position": 1,
+      "team": "NTNUI 2",
+      "played": 1,
+      "won": 1,
+      "lost": 0,
+      "setsFor": 3,
+      "setsAgainst": 0,
+      "points": 3,
+      "us": true
+    },
+    {
+      "position": 2,
+      "team": "Førde VBK 2",
+      "played": 1,
+      "won": 1,
+      "lost": 0,
+      "setsFor": 3,
+      "setsAgainst": 0,
+      "points": 3,
+      "us": false
+    },
+    {
+      "position": 3,
+      "team": "OSI",
+      "played": 1,
+      "won": 1,
+      "lost": 0,
+      "setsFor": 3,
+      "setsAgainst": 1,
+      "points": 3,
+      "us": false
+    },
+    {
+      "position": 4,
+      "team": "KFUM Volda",
+      "played": 1,
+      "won": 1,
+      "lost": 0,
+      "setsFor": 3,
+      "setsAgainst": 2,
+      "points": 2,
+      "us": false
+    },
+    {
+      "position": 5,
+      "team": "BK Tromsø 2",
+      "played": 1,
+      "won": 0,
+      "lost": 1,
+      "setsFor": 2,
+      "setsAgainst": 3,
+      "points": 1,
+      "us": false
+    },
+    {
+      "position": 6,
       "team": "Blindheim IL",
       "played": 0,
       "won": 0,
@@ -16,95 +71,7 @@
       "us": false
     },
     {
-      "position": 2,
-      "team": "KFUM Volda",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 3,
-      "team": "TIF Viking 2",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 4,
-      "team": "Vegårshei IL",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 5,
-      "team": "NTNUI 2",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": true
-    },
-    {
-      "position": 6,
-      "team": "BK Tromsø 2",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
       "position": 7,
-      "team": "OSI",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 8,
-      "team": "Oldenborg",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 9,
-      "team": "Førde VBK 2",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 10,
       "team": "IL Jardar",
       "played": 0,
       "won": 0,
@@ -115,13 +82,46 @@
       "us": false
     },
     {
-      "position": 11,
+      "position": 8,
       "team": "ToppVolley Norge 2",
       "played": 0,
       "won": 0,
       "lost": 0,
       "setsFor": 0,
       "setsAgainst": 0,
+      "points": 0,
+      "us": false
+    },
+    {
+      "position": 9,
+      "team": "Oldenborg",
+      "played": 1,
+      "won": 0,
+      "lost": 1,
+      "setsFor": 1,
+      "setsAgainst": 3,
+      "points": 0,
+      "us": false
+    },
+    {
+      "position": 10,
+      "team": "Vegårshei IL",
+      "played": 1,
+      "won": 0,
+      "lost": 1,
+      "setsFor": 0,
+      "setsAgainst": 3,
+      "points": 0,
+      "us": false
+    },
+    {
+      "position": 11,
+      "team": "TIF Viking 2",
+      "played": 1,
+      "won": 0,
+      "lost": 1,
+      "setsFor": 0,
+      "setsAgainst": 3,
       "points": 0,
       "us": false
     }
@@ -134,12 +134,107 @@
       "venue": "Dragvollhallen A",
       "home": true,
       "opponent": "TIF Viking 2",
-      "setsFor": null,
-      "setsAgainst": null,
-      "finished": false,
-      "sets": null,
-      "players": null,
-      "statsUrl": null
+      "setsFor": 3,
+      "setsAgainst": 0,
+      "finished": true,
+      "sets": [
+        [
+          25,
+          22
+        ],
+        [
+          25,
+          15
+        ],
+        [
+          25,
+          16
+        ]
+      ],
+      "players": [
+        {
+          "number": 1,
+          "name": "Therkelsen Einar",
+          "sets": 3,
+          "points": 8,
+          "attack": 7,
+          "block": 0,
+          "ace": 1
+        },
+        {
+          "number": 2,
+          "name": "Vestå Gustav",
+          "sets": 3,
+          "points": 12,
+          "attack": 12,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 3,
+          "name": "Buset Eirik",
+          "sets": 3,
+          "points": 1,
+          "attack": 1,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 4,
+          "name": "Dingemans Lars",
+          "sets": 3,
+          "points": 4,
+          "attack": 3,
+          "block": 0,
+          "ace": 1
+        },
+        {
+          "number": 5,
+          "name": "Yttervik Casper Strand",
+          "sets": 3,
+          "points": 8,
+          "attack": 3,
+          "block": 4,
+          "ace": 1
+        },
+        {
+          "number": 7,
+          "name": "Mikalsen Markus",
+          "sets": 3,
+          "points": 14,
+          "attack": 11,
+          "block": 0,
+          "ace": 3
+        },
+        {
+          "number": 14,
+          "name": "Overrein Erik Sung Nilsen",
+          "sets": 3,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 16,
+          "name": "Buttingsrud Madsen Amund",
+          "sets": 3,
+          "points": 3,
+          "attack": 3,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 17,
+          "name": "Wallstad-Hamansen Markus",
+          "sets": 2,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        }
+      ],
+      "statsUrl": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3376&ID=96&PID=153"
     },
     {
       "id": "8445034",
