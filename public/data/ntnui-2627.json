@@ -1,30 +1,30 @@
 {
-  "updated": "2026-09-27T09:45:58.359Z",
+  "updated": "2026-09-28T10:26:56.621Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
   "table": [
     {
       "position": 1,
-      "team": "NTNUI 2",
-      "played": 1,
-      "won": 1,
+      "team": "Førde VBK 2",
+      "played": 2,
+      "won": 2,
       "lost": 0,
-      "setsFor": 3,
+      "setsFor": 6,
       "setsAgainst": 0,
-      "points": 3,
-      "us": true
+      "points": 6,
+      "us": false
     },
     {
       "position": 2,
-      "team": "Førde VBK 2",
-      "played": 1,
-      "won": 1,
+      "team": "NTNUI 2",
+      "played": 2,
+      "won": 2,
       "lost": 0,
-      "setsFor": 3,
-      "setsAgainst": 0,
-      "points": 3,
-      "us": false
+      "setsFor": 6,
+      "setsAgainst": 2,
+      "points": 5,
+      "us": true
     },
     {
       "position": 3,
@@ -40,12 +40,12 @@
     {
       "position": 4,
       "team": "KFUM Volda",
-      "played": 1,
+      "played": 2,
       "won": 1,
-      "lost": 0,
-      "setsFor": 3,
-      "setsAgainst": 2,
-      "points": 2,
+      "lost": 1,
+      "setsFor": 5,
+      "setsAgainst": 5,
+      "points": 3,
       "us": false
     },
     {
@@ -72,17 +72,6 @@
     },
     {
       "position": 7,
-      "team": "IL Jardar",
-      "played": 0,
-      "won": 0,
-      "lost": 0,
-      "setsFor": 0,
-      "setsAgainst": 0,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 8,
       "team": "ToppVolley Norge 2",
       "played": 0,
       "won": 0,
@@ -93,7 +82,7 @@
       "us": false
     },
     {
-      "position": 9,
+      "position": 8,
       "team": "Oldenborg",
       "played": 1,
       "won": 0,
@@ -104,7 +93,7 @@
       "us": false
     },
     {
-      "position": 10,
+      "position": 9,
       "team": "Vegårshei IL",
       "played": 1,
       "won": 0,
@@ -115,8 +104,19 @@
       "us": false
     },
     {
-      "position": 11,
+      "position": 10,
       "team": "TIF Viking 2",
+      "played": 1,
+      "won": 0,
+      "lost": 1,
+      "setsFor": 0,
+      "setsAgainst": 3,
+      "points": 0,
+      "us": false
+    },
+    {
+      "position": 11,
+      "team": "IL Jardar",
       "played": 1,
       "won": 0,
       "lost": 1,
@@ -243,12 +243,142 @@
       "venue": "Dragvollhallen A",
       "home": true,
       "opponent": "KFUM Volda",
-      "setsFor": null,
-      "setsAgainst": null,
-      "finished": false,
-      "sets": null,
-      "players": null,
-      "statsUrl": null
+      "setsFor": 3,
+      "setsAgainst": 2,
+      "finished": true,
+      "sets": [
+        [
+          21,
+          25
+        ],
+        [
+          27,
+          25
+        ],
+        [
+          25,
+          15
+        ],
+        [
+          23,
+          25
+        ],
+        [
+          19,
+          17
+        ]
+      ],
+      "players": [
+        {
+          "number": 1,
+          "name": "Therkelsen Einar",
+          "sets": 2,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 2,
+          "name": "Vestå Gustav",
+          "sets": 5,
+          "points": 21,
+          "attack": 18,
+          "block": 1,
+          "ace": 2
+        },
+        {
+          "number": 3,
+          "name": "Buset Eirik",
+          "sets": 5,
+          "points": 3,
+          "attack": 3,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 4,
+          "name": "Dingemans Lars",
+          "sets": 5,
+          "points": 18,
+          "attack": 15,
+          "block": 3,
+          "ace": 0
+        },
+        {
+          "number": 5,
+          "name": "Yttervik Casper Strand",
+          "sets": 4,
+          "points": 4,
+          "attack": 2,
+          "block": 2,
+          "ace": 0
+        },
+        {
+          "number": 7,
+          "name": "Mikalsen Markus",
+          "sets": 2,
+          "points": 2,
+          "attack": 2,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 9,
+          "name": "Lannem Vetle",
+          "sets": 1,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 10,
+          "name": "Endresplass Joakim",
+          "sets": 5,
+          "points": 24,
+          "attack": 21,
+          "block": 3,
+          "ace": 0
+        },
+        {
+          "number": 12,
+          "name": "Spikseth Heine Angell",
+          "sets": 5,
+          "points": 3,
+          "attack": 2,
+          "block": 1,
+          "ace": 0
+        },
+        {
+          "number": 14,
+          "name": "Overrein Erik Sung Nilsen",
+          "sets": 5,
+          "points": 1,
+          "attack": 1,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 16,
+          "name": "Buttingsrud Madsen Amund",
+          "sets": 2,
+          "points": 2,
+          "attack": 1,
+          "block": 0,
+          "ace": 1
+        },
+        {
+          "number": 17,
+          "name": "Wallstad-Hamansen Markus",
+          "sets": 4,
+          "points": 2,
+          "attack": 0,
+          "block": 0,
+          "ace": 2
+        }
+      ],
+      "statsUrl": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3379&ID=96&PID=153"
     },
     {
       "id": "8445050",

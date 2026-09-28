@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T09:45:55.204Z",
+  "updated": "2026-09-28T10:26:50.858Z",
   "player": "Markus Mikalsen",
   "team": "NTNUI 2",
   "matches": [
@@ -1222,6 +1222,31 @@
         "sets": 3
       },
       "source": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3376&ID=96&PID=153"
+    },
+    {
+      "id": "3379",
+      "date": "2026-09-27T12:00",
+      "season": "26/27",
+      "competition": "1.divisjon Menn",
+      "home": true,
+      "opponent": "KFUM Volda",
+      "setsFor": 3,
+      "setsAgainst": 2,
+      "played": true,
+      "stats": {
+        "points": 2,
+        "attack": 2,
+        "attackAttempts": 3,
+        "attackErrors": 0,
+        "attackBlocked": 0,
+        "block": 0,
+        "ace": 0,
+        "serves": 2,
+        "serveErrors": 0,
+        "receptions": 0,
+        "sets": 2
+      },
+      "source": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3379&ID=96&PID=153"
     }
   ]
 }
