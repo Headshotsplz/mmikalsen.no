@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T10:22:32.852Z",
+  "updated": "2026-10-05T11:07:14.750Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -28,17 +28,6 @@
     },
     {
       "position": 3,
-      "team": "OSI",
-      "played": 1,
-      "won": 1,
-      "lost": 0,
-      "setsFor": 3,
-      "setsAgainst": 1,
-      "points": 3,
-      "us": false
-    },
-    {
-      "position": 4,
       "team": "Blindheim IL",
       "played": 1,
       "won": 1,
@@ -49,7 +38,29 @@
       "us": false
     },
     {
+      "position": 4,
+      "team": "IL Jardar",
+      "played": 2,
+      "won": 1,
+      "lost": 1,
+      "setsFor": 3,
+      "setsAgainst": 3,
+      "points": 3,
+      "us": false
+    },
+    {
       "position": 5,
+      "team": "OSI",
+      "played": 2,
+      "won": 1,
+      "lost": 1,
+      "setsFor": 3,
+      "setsAgainst": 4,
+      "points": 3,
+      "us": false
+    },
+    {
+      "position": 6,
       "team": "KFUM Volda",
       "played": 3,
       "won": 1,
@@ -60,7 +71,7 @@
       "us": false
     },
     {
-      "position": 6,
+      "position": 7,
       "team": "TIF Viking 2",
       "played": 2,
       "won": 1,
@@ -71,7 +82,7 @@
       "us": false
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "BK Tromsø 2",
       "played": 2,
       "won": 0,
@@ -82,7 +93,7 @@
       "us": false
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "Vegårshei IL",
       "played": 2,
       "won": 0,
@@ -93,7 +104,7 @@
       "us": false
     },
     {
-      "position": 9,
+      "position": 10,
       "team": "ToppVolley Norge 2",
       "played": 0,
       "won": 0,
@@ -104,23 +115,12 @@
       "us": false
     },
     {
-      "position": 10,
+      "position": 11,
       "team": "Oldenborg",
       "played": 1,
       "won": 0,
       "lost": 1,
       "setsFor": 1,
-      "setsAgainst": 3,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 11,
-      "team": "IL Jardar",
-      "played": 1,
-      "won": 0,
-      "lost": 1,
-      "setsFor": 0,
       "setsAgainst": 3,
       "points": 0,
       "us": false
