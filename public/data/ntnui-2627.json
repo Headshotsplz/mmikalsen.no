@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T10:23:27.489Z",
+  "updated": "2026-10-11T10:31:39.046Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -7,12 +7,12 @@
     {
       "position": 1,
       "team": "Førde VBK 2",
-      "played": 3,
-      "won": 3,
+      "played": 4,
+      "won": 4,
       "lost": 0,
-      "setsFor": 9,
+      "setsFor": 12,
       "setsAgainst": 0,
-      "points": 9,
+      "points": 12,
       "us": false
     },
     {
@@ -28,6 +28,17 @@
     },
     {
       "position": 3,
+      "team": "KFUM Volda",
+      "played": 4,
+      "won": 1,
+      "lost": 3,
+      "setsFor": 8,
+      "setsAgainst": 11,
+      "points": 4,
+      "us": false
+    },
+    {
+      "position": 4,
       "team": "Blindheim IL",
       "played": 1,
       "won": 1,
@@ -38,7 +49,7 @@
       "us": false
     },
     {
-      "position": 4,
+      "position": 5,
       "team": "IL Jardar",
       "played": 2,
       "won": 1,
@@ -49,7 +60,7 @@
       "us": false
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "OSI",
       "played": 2,
       "won": 1,
@@ -60,41 +71,30 @@
       "us": false
     },
     {
-      "position": 6,
-      "team": "KFUM Volda",
+      "position": 7,
+      "team": "Vegårshei IL",
       "played": 3,
       "won": 1,
       "lost": 2,
-      "setsFor": 6,
+      "setsFor": 5,
       "setsAgainst": 8,
       "points": 3,
       "us": false
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "TIF Viking 2",
-      "played": 2,
+      "played": 3,
       "won": 1,
-      "lost": 1,
+      "lost": 2,
       "setsFor": 3,
-      "setsAgainst": 5,
+      "setsAgainst": 8,
       "points": 2,
       "us": false
     },
     {
-      "position": 8,
-      "team": "BK Tromsø 2",
-      "played": 2,
-      "won": 0,
-      "lost": 2,
-      "setsFor": 2,
-      "setsAgainst": 6,
-      "points": 1,
-      "us": false
-    },
-    {
       "position": 9,
-      "team": "Vegårshei IL",
+      "team": "BK Tromsø 2",
       "played": 2,
       "won": 0,
       "lost": 2,
