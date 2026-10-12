@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T10:31:39.046Z",
+  "updated": "2026-10-12T11:36:35.562Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -17,6 +17,17 @@
     },
     {
       "position": 2,
+      "team": "Vegårshei IL",
+      "played": 4,
+      "won": 2,
+      "lost": 2,
+      "setsFor": 8,
+      "setsAgainst": 9,
+      "points": 6,
+      "us": false
+    },
+    {
+      "position": 3,
       "team": "NTNUI 2",
       "played": 2,
       "won": 2,
@@ -27,7 +38,7 @@
       "us": true
     },
     {
-      "position": 3,
+      "position": 4,
       "team": "KFUM Volda",
       "played": 4,
       "won": 1,
@@ -38,18 +49,18 @@
       "us": false
     },
     {
-      "position": 4,
+      "position": 5,
       "team": "Blindheim IL",
-      "played": 1,
+      "played": 2,
       "won": 1,
-      "lost": 0,
-      "setsFor": 3,
-      "setsAgainst": 1,
+      "lost": 1,
+      "setsFor": 4,
+      "setsAgainst": 4,
       "points": 3,
       "us": false
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "IL Jardar",
       "played": 2,
       "won": 1,
@@ -60,24 +71,13 @@
       "us": false
     },
     {
-      "position": 6,
+      "position": 7,
       "team": "OSI",
       "played": 2,
       "won": 1,
       "lost": 1,
       "setsFor": 3,
       "setsAgainst": 4,
-      "points": 3,
-      "us": false
-    },
-    {
-      "position": 7,
-      "team": "Vegårshei IL",
-      "played": 3,
-      "won": 1,
-      "lost": 2,
-      "setsFor": 5,
-      "setsAgainst": 8,
       "points": 3,
       "us": false
     },
