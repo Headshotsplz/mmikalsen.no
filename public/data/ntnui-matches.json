@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T10:26:50.858Z",
+  "updated": "2026-10-18T08:30:05.640Z",
   "player": "Markus Mikalsen",
   "team": "NTNUI 2",
   "matches": [
@@ -1247,6 +1247,19 @@
         "sets": 2
       },
       "source": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3379&ID=96&PID=153"
+    },
+    {
+      "id": "3390",
+      "date": "2026-10-17T15:00",
+      "season": "26/27",
+      "competition": "1.divisjon Menn",
+      "home": false,
+      "opponent": "ToppVolley Norge 2",
+      "setsFor": 3,
+      "setsAgainst": 0,
+      "played": false,
+      "stats": null,
+      "source": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3390&ID=96&PID=153"
     }
   ]
 }
