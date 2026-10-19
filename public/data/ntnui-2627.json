@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T08:30:08.960Z",
+  "updated": "2026-10-19T09:31:58.258Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -39,6 +39,17 @@
     },
     {
       "position": 4,
+      "team": "TIF Viking 2",
+      "played": 4,
+      "won": 2,
+      "lost": 2,
+      "setsFor": 6,
+      "setsAgainst": 8,
+      "points": 5,
+      "us": false
+    },
+    {
+      "position": 5,
       "team": "KFUM Volda",
       "played": 4,
       "won": 1,
@@ -49,7 +60,7 @@
       "us": false
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Blindheim IL",
       "played": 2,
       "won": 1,
@@ -60,7 +71,7 @@
       "us": false
     },
     {
-      "position": 6,
+      "position": 7,
       "team": "IL Jardar",
       "played": 2,
       "won": 1,
@@ -71,7 +82,7 @@
       "us": false
     },
     {
-      "position": 7,
+      "position": 8,
       "team": "OSI",
       "played": 2,
       "won": 1,
@@ -82,24 +93,13 @@
       "us": false
     },
     {
-      "position": 8,
-      "team": "TIF Viking 2",
-      "played": 3,
-      "won": 1,
-      "lost": 2,
-      "setsFor": 3,
-      "setsAgainst": 8,
-      "points": 2,
-      "us": false
-    },
-    {
       "position": 9,
       "team": "BK Tromsø 2",
-      "played": 3,
+      "played": 4,
       "won": 0,
-      "lost": 3,
+      "lost": 4,
       "setsFor": 2,
-      "setsAgainst": 9,
+      "setsAgainst": 12,
       "points": 1,
       "us": false
     },
