@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T09:04:25.862Z",
+  "updated": "2026-10-25T08:54:18.778Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -28,6 +28,28 @@
     },
     {
       "position": 3,
+      "team": "IL Jardar",
+      "played": 3,
+      "won": 2,
+      "lost": 1,
+      "setsFor": 6,
+      "setsAgainst": 3,
+      "points": 6,
+      "us": false
+    },
+    {
+      "position": 4,
+      "team": "Blindheim IL",
+      "played": 3,
+      "won": 2,
+      "lost": 1,
+      "setsFor": 7,
+      "setsAgainst": 5,
+      "points": 6,
+      "us": false
+    },
+    {
+      "position": 5,
       "team": "Vegårshei IL",
       "played": 4,
       "won": 2,
@@ -38,7 +60,7 @@
       "us": false
     },
     {
-      "position": 4,
+      "position": 6,
       "team": "TIF Viking 2",
       "played": 4,
       "won": 2,
@@ -49,7 +71,7 @@
       "us": false
     },
     {
-      "position": 5,
+      "position": 7,
       "team": "KFUM Volda",
       "played": 4,
       "won": 1,
@@ -57,28 +79,6 @@
       "setsFor": 8,
       "setsAgainst": 11,
       "points": 4,
-      "us": false
-    },
-    {
-      "position": 6,
-      "team": "Blindheim IL",
-      "played": 2,
-      "won": 1,
-      "lost": 1,
-      "setsFor": 4,
-      "setsAgainst": 4,
-      "points": 3,
-      "us": false
-    },
-    {
-      "position": 7,
-      "team": "IL Jardar",
-      "played": 2,
-      "won": 1,
-      "lost": 1,
-      "setsFor": 3,
-      "setsAgainst": 3,
-      "points": 3,
       "us": false
     },
     {
@@ -95,33 +95,33 @@
     {
       "position": 9,
       "team": "BK Tromsø 2",
-      "played": 4,
+      "played": 5,
       "won": 0,
-      "lost": 4,
+      "lost": 5,
       "setsFor": 2,
-      "setsAgainst": 12,
+      "setsAgainst": 15,
       "points": 1,
       "us": false
     },
     {
       "position": 10,
-      "team": "Oldenborg Idrætsselskab",
-      "played": 1,
-      "won": 0,
-      "lost": 1,
-      "setsFor": 1,
-      "setsAgainst": 3,
-      "points": 0,
-      "us": false
-    },
-    {
-      "position": 11,
       "team": "ToppVolley Norge 2",
       "played": 1,
       "won": 0,
       "lost": 1,
       "setsFor": 0,
       "setsAgainst": 3,
+      "points": 0,
+      "us": false
+    },
+    {
+      "position": 11,
+      "team": "Oldenborg Idrætsselskab",
+      "played": 2,
+      "won": 0,
+      "lost": 2,
+      "setsFor": 2,
+      "setsAgainst": 6,
       "points": 0,
       "us": false
     }
