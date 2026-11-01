@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T09:37:03.727Z",
+  "updated": "2026-11-01T10:59:27.528Z",
   "player": "Markus Mikalsen",
   "team": "NTNUI 2",
   "matches": [
@@ -1285,6 +1285,31 @@
         "sets": 4
       },
       "source": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3394&ID=96&PID=153"
+    },
+    {
+      "id": "3396",
+      "date": "2026-10-31T16:30",
+      "season": "26/27",
+      "competition": "1.divisjon Menn",
+      "home": false,
+      "opponent": "Førde VBK 2",
+      "setsFor": 3,
+      "setsAgainst": 2,
+      "played": true,
+      "stats": {
+        "points": 12,
+        "attack": 12,
+        "attackAttempts": 45,
+        "attackErrors": 2,
+        "attackBlocked": 0,
+        "block": 0,
+        "ace": 0,
+        "serves": 16,
+        "serveErrors": 5,
+        "receptions": 3,
+        "sets": 5
+      },
+      "source": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3396&ID=96&PID=153"
     }
   ]
 }

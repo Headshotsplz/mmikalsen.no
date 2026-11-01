@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T09:37:08.938Z",
+  "updated": "2026-11-01T10:59:31.110Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -7,23 +7,23 @@
     {
       "position": 1,
       "team": "Førde VBK 2",
-      "played": 5,
+      "played": 6,
       "won": 5,
-      "lost": 0,
-      "setsFor": 15,
-      "setsAgainst": 0,
-      "points": 15,
+      "lost": 1,
+      "setsFor": 17,
+      "setsAgainst": 3,
+      "points": 16,
       "us": false
     },
     {
       "position": 2,
       "team": "NTNUI 2",
-      "played": 4,
-      "won": 4,
+      "played": 5,
+      "won": 5,
       "lost": 0,
-      "setsFor": 12,
-      "setsAgainst": 3,
-      "points": 11,
+      "setsFor": 15,
+      "setsAgainst": 5,
+      "points": 13,
       "us": true
     },
     {
@@ -545,12 +545,142 @@
       "venue": "Øyrane Arena",
       "home": false,
       "opponent": "Førde VBK 2",
-      "setsFor": null,
-      "setsAgainst": null,
-      "finished": false,
-      "sets": null,
-      "players": null,
-      "statsUrl": null
+      "setsFor": 3,
+      "setsAgainst": 2,
+      "finished": true,
+      "sets": [
+        [
+          25,
+          20
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          21,
+          25
+        ],
+        [
+          17,
+          25
+        ],
+        [
+          15,
+          4
+        ]
+      ],
+      "players": [
+        {
+          "number": 1,
+          "name": "Therkelsen Einar",
+          "sets": 1,
+          "points": 1,
+          "attack": 1,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 2,
+          "name": "Vestå Gustav",
+          "sets": 5,
+          "points": 12,
+          "attack": 11,
+          "block": 1,
+          "ace": 0
+        },
+        {
+          "number": 3,
+          "name": "Buset Eirik",
+          "sets": 5,
+          "points": 3,
+          "attack": 0,
+          "block": 3,
+          "ace": 0
+        },
+        {
+          "number": 4,
+          "name": "Dingemans Lars",
+          "sets": 2,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 5,
+          "name": "Yttervik Casper Strand",
+          "sets": 5,
+          "points": 10,
+          "attack": 4,
+          "block": 5,
+          "ace": 1
+        },
+        {
+          "number": 7,
+          "name": "Mikalsen Markus",
+          "sets": 5,
+          "points": 12,
+          "attack": 12,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 9,
+          "name": "Lannem Vetle",
+          "sets": 1,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 10,
+          "name": "Endresplass Joakim",
+          "sets": 5,
+          "points": 14,
+          "attack": 9,
+          "block": 1,
+          "ace": 4
+        },
+        {
+          "number": 12,
+          "name": "Spikseth Heine Angell",
+          "sets": 5,
+          "points": 3,
+          "attack": 2,
+          "block": 1,
+          "ace": 0
+        },
+        {
+          "number": 13,
+          "name": "Lerfald Ask Barø",
+          "sets": 2,
+          "points": 1,
+          "attack": 1,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 14,
+          "name": "Overrein Erik Sung Nilsen",
+          "sets": 5,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 17,
+          "name": "Wallstad-Hamansen Markus",
+          "sets": 3,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        }
+      ],
+      "statsUrl": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3396&ID=96&PID=153"
     },
     {
       "id": "8445055",
