@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T11:57:44.357Z",
+  "updated": "2026-11-05T11:48:54.367Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -404,8 +404,72 @@
           17
         ]
       ],
-      "players": null,
-      "statsUrl": null
+      "players": [
+        {
+          "number": 1,
+          "name": "Therkelsen Einar",
+          "sets": 3,
+          "points": 4,
+          "attack": 4,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 2,
+          "name": "Vestå Gustav",
+          "sets": 3,
+          "points": 10,
+          "attack": 8,
+          "block": 0,
+          "ace": 2
+        },
+        {
+          "number": 3,
+          "name": "Buset Eirik",
+          "sets": 3,
+          "points": 4,
+          "attack": 1,
+          "block": 1,
+          "ace": 2
+        },
+        {
+          "number": 5,
+          "name": "Yttervik Casper Strand",
+          "sets": 3,
+          "points": 10,
+          "attack": 5,
+          "block": 5,
+          "ace": 0
+        },
+        {
+          "number": 8,
+          "name": "Berg Mats Børja",
+          "sets": 3,
+          "points": 6,
+          "attack": 5,
+          "block": 0,
+          "ace": 1
+        },
+        {
+          "number": 11,
+          "name": "Lykke Chrisander Hynne",
+          "sets": 3,
+          "points": 1,
+          "attack": 1,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 16,
+          "name": "Buttingsrud Madsen Amund",
+          "sets": 3,
+          "points": 5,
+          "attack": 2,
+          "block": 3,
+          "ace": 0
+        }
+      ],
+      "statsUrl": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3390&ID=96&PID=153"
     },
     {
       "id": "8445052",
