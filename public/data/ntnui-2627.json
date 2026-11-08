@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T11:48:54.367Z",
+  "updated": "2026-11-08T11:00:05.791Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -7,12 +7,12 @@
     {
       "position": 1,
       "team": "Førde VBK 2",
-      "played": 6,
+      "played": 7,
       "won": 5,
-      "lost": 1,
-      "setsFor": 17,
-      "setsAgainst": 3,
-      "points": 16,
+      "lost": 2,
+      "setsFor": 19,
+      "setsAgainst": 6,
+      "points": 17,
       "us": false
     },
     {
@@ -28,6 +28,28 @@
     },
     {
       "position": 3,
+      "team": "Blindheim IL",
+      "played": 4,
+      "won": 3,
+      "lost": 1,
+      "setsFor": 10,
+      "setsAgainst": 6,
+      "points": 9,
+      "us": false
+    },
+    {
+      "position": 4,
+      "team": "IL Jardar",
+      "played": 4,
+      "won": 3,
+      "lost": 1,
+      "setsFor": 9,
+      "setsAgainst": 5,
+      "points": 8,
+      "us": false
+    },
+    {
+      "position": 5,
       "team": "TIF Viking 2",
       "played": 5,
       "won": 3,
@@ -38,7 +60,7 @@
       "us": false
     },
     {
-      "position": 4,
+      "position": 6,
       "team": "KFUM Volda",
       "played": 5,
       "won": 2,
@@ -49,40 +71,29 @@
       "us": false
     },
     {
-      "position": 5,
-      "team": "IL Jardar",
-      "played": 3,
-      "won": 2,
-      "lost": 1,
-      "setsFor": 6,
-      "setsAgainst": 3,
-      "points": 6,
-      "us": false
-    },
-    {
-      "position": 6,
-      "team": "Blindheim IL",
-      "played": 3,
-      "won": 2,
-      "lost": 1,
-      "setsFor": 7,
-      "setsAgainst": 5,
-      "points": 6,
-      "us": false
-    },
-    {
       "position": 7,
       "team": "Vegårshei IL",
-      "played": 4,
+      "played": 5,
       "won": 2,
-      "lost": 2,
+      "lost": 3,
       "setsFor": 8,
-      "setsAgainst": 9,
+      "setsAgainst": 12,
       "points": 6,
       "us": false
     },
     {
       "position": 8,
+      "team": "BK Tromsø 2",
+      "played": 7,
+      "won": 1,
+      "lost": 6,
+      "setsFor": 6,
+      "setsAgainst": 18,
+      "points": 4,
+      "us": false
+    },
+    {
+      "position": 9,
       "team": "OSI",
       "played": 2,
       "won": 1,
@@ -93,24 +104,13 @@
       "us": false
     },
     {
-      "position": 9,
-      "team": "BK Tromsø 2",
-      "played": 6,
-      "won": 0,
-      "lost": 6,
-      "setsFor": 3,
-      "setsAgainst": 18,
-      "points": 1,
-      "us": false
-    },
-    {
       "position": 10,
       "team": "ToppVolley Norge 2",
-      "played": 1,
+      "played": 2,
       "won": 0,
-      "lost": 1,
-      "setsFor": 0,
-      "setsAgainst": 3,
+      "lost": 2,
+      "setsFor": 1,
+      "setsAgainst": 6,
       "points": 0,
       "us": false
     },
