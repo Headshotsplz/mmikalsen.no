@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T11:00:05.791Z",
+  "updated": "2026-11-09T12:27:46.648Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -18,49 +18,60 @@
     {
       "position": 2,
       "team": "NTNUI 2",
-      "played": 6,
+      "played": 7,
       "won": 5,
-      "lost": 1,
-      "setsFor": 17,
-      "setsAgainst": 8,
+      "lost": 2,
+      "setsFor": 18,
+      "setsAgainst": 11,
       "points": 14,
       "us": true
     },
     {
       "position": 3,
       "team": "Blindheim IL",
-      "played": 4,
-      "won": 3,
+      "played": 5,
+      "won": 4,
       "lost": 1,
-      "setsFor": 10,
+      "setsFor": 13,
       "setsAgainst": 6,
-      "points": 9,
+      "points": 12,
       "us": false
     },
     {
       "position": 4,
       "team": "IL Jardar",
-      "played": 4,
-      "won": 3,
+      "played": 5,
+      "won": 4,
       "lost": 1,
-      "setsFor": 9,
-      "setsAgainst": 5,
-      "points": 8,
+      "setsFor": 12,
+      "setsAgainst": 7,
+      "points": 10,
       "us": false
     },
     {
       "position": 5,
-      "team": "TIF Viking 2",
-      "played": 5,
+      "team": "Vegårshei IL",
+      "played": 6,
       "won": 3,
-      "lost": 2,
-      "setsFor": 9,
-      "setsAgainst": 10,
-      "points": 7,
+      "lost": 3,
+      "setsFor": 11,
+      "setsAgainst": 13,
+      "points": 9,
       "us": false
     },
     {
       "position": 6,
+      "team": "TIF Viking 2",
+      "played": 6,
+      "won": 3,
+      "lost": 3,
+      "setsFor": 11,
+      "setsAgainst": 13,
+      "points": 8,
+      "us": false
+    },
+    {
+      "position": 7,
       "team": "KFUM Volda",
       "played": 5,
       "won": 2,
@@ -71,18 +82,18 @@
       "us": false
     },
     {
-      "position": 7,
-      "team": "Vegårshei IL",
-      "played": 5,
-      "won": 2,
-      "lost": 3,
-      "setsFor": 8,
-      "setsAgainst": 12,
-      "points": 6,
+      "position": 8,
+      "team": "OSI",
+      "played": 3,
+      "won": 1,
+      "lost": 2,
+      "setsFor": 5,
+      "setsAgainst": 7,
+      "points": 4,
       "us": false
     },
     {
-      "position": 8,
+      "position": 9,
       "team": "BK Tromsø 2",
       "played": 7,
       "won": 1,
@@ -93,35 +104,24 @@
       "us": false
     },
     {
-      "position": 9,
-      "team": "OSI",
-      "played": 2,
-      "won": 1,
-      "lost": 1,
-      "setsFor": 3,
-      "setsAgainst": 4,
-      "points": 3,
-      "us": false
-    },
-    {
       "position": 10,
       "team": "ToppVolley Norge 2",
-      "played": 2,
-      "won": 0,
+      "played": 3,
+      "won": 1,
       "lost": 2,
-      "setsFor": 1,
-      "setsAgainst": 6,
-      "points": 0,
+      "setsFor": 4,
+      "setsAgainst": 8,
+      "points": 2,
       "us": false
     },
     {
       "position": 11,
       "team": "Oldenborg Idrætsselskab",
-      "played": 3,
+      "played": 4,
       "won": 0,
-      "lost": 3,
+      "lost": 4,
       "setsFor": 2,
-      "setsAgainst": 9,
+      "setsAgainst": 12,
       "points": 0,
       "us": false
     }
@@ -888,12 +888,120 @@
       "venue": "Dragvollhallen A",
       "home": true,
       "opponent": "Vegårshei IL",
-      "setsFor": null,
-      "setsAgainst": null,
-      "finished": false,
-      "sets": null,
-      "players": null,
-      "statsUrl": null
+      "setsFor": 1,
+      "setsAgainst": 3,
+      "finished": true,
+      "sets": [
+        [
+          16,
+          25
+        ],
+        [
+          28,
+          30
+        ],
+        [
+          25,
+          14
+        ],
+        [
+          19,
+          25
+        ]
+      ],
+      "players": [
+        {
+          "number": 2,
+          "name": "Vestå Gustav",
+          "sets": 4,
+          "points": 10,
+          "attack": 8,
+          "block": 0,
+          "ace": 2
+        },
+        {
+          "number": 3,
+          "name": "Buset Eirik",
+          "sets": 4,
+          "points": 1,
+          "attack": 0,
+          "block": 1,
+          "ace": 0
+        },
+        {
+          "number": 4,
+          "name": "Gulsvik Ågesen Lars",
+          "sets": 4,
+          "points": 9,
+          "attack": 8,
+          "block": 1,
+          "ace": 0
+        },
+        {
+          "number": 5,
+          "name": "Yttervik Casper Strand",
+          "sets": 4,
+          "points": 10,
+          "attack": 8,
+          "block": 1,
+          "ace": 1
+        },
+        {
+          "number": 7,
+          "name": "Mikalsen Markus",
+          "sets": 2,
+          "points": 5,
+          "attack": 5,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 8,
+          "name": "Berg Mats Børja",
+          "sets": 4,
+          "points": 22,
+          "attack": 20,
+          "block": 2,
+          "ace": 0
+        },
+        {
+          "number": 10,
+          "name": "Endresplass Joakim",
+          "sets": 1,
+          "points": 2,
+          "attack": 1,
+          "block": 0,
+          "ace": 1
+        },
+        {
+          "number": 12,
+          "name": "Spikseth Heine Angell",
+          "sets": 4,
+          "points": 6,
+          "attack": 0,
+          "block": 6,
+          "ace": 0
+        },
+        {
+          "number": 14,
+          "name": "Overrein Erik Sung Nilsen",
+          "sets": 4,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        },
+        {
+          "number": 17,
+          "name": "Wallstad-Hamansen Markus",
+          "sets": 2,
+          "points": 0,
+          "attack": 0,
+          "block": 0,
+          "ace": 0
+        }
+      ],
+      "statsUrl": "https://nvbf-web.dataproject.com/MatchStatistics.aspx?mID=3403&ID=96&PID=153"
     },
     {
       "id": "8445067",
