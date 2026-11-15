@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T12:27:46.648Z",
+  "updated": "2026-11-15T11:43:20.009Z",
   "season": "26/27",
   "team": "NTNUI 2",
   "tournament": "1. divisjon",
@@ -39,6 +39,17 @@
     },
     {
       "position": 4,
+      "team": "TIF Viking 2",
+      "played": 7,
+      "won": 4,
+      "lost": 3,
+      "setsFor": 14,
+      "setsAgainst": 14,
+      "points": 11,
+      "us": false
+    },
+    {
+      "position": 5,
       "team": "IL Jardar",
       "played": 5,
       "won": 4,
@@ -49,7 +60,7 @@
       "us": false
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Vegårshei IL",
       "played": 6,
       "won": 3,
@@ -57,17 +68,6 @@
       "setsFor": 11,
       "setsAgainst": 13,
       "points": 9,
-      "us": false
-    },
-    {
-      "position": 6,
-      "team": "TIF Viking 2",
-      "played": 6,
-      "won": 3,
-      "lost": 3,
-      "setsFor": 11,
-      "setsAgainst": 13,
-      "points": 8,
       "us": false
     },
     {
@@ -95,11 +95,11 @@
     {
       "position": 9,
       "team": "BK Tromsø 2",
-      "played": 7,
+      "played": 8,
       "won": 1,
-      "lost": 6,
-      "setsFor": 6,
-      "setsAgainst": 18,
+      "lost": 7,
+      "setsFor": 7,
+      "setsAgainst": 21,
       "points": 4,
       "us": false
     },
